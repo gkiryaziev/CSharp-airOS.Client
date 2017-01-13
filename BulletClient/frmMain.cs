@@ -13,6 +13,7 @@ namespace BulletClient
     public partial class frmMain : Form
     {
         MySSHClient mySshClient = new MySSHClient();
+        MyUbntClient myUbntClient = new MyUbntClient();
 
         public frmMain()
         {
@@ -28,6 +29,7 @@ namespace BulletClient
         {
             if (mySshClient.Open(txtHost.Text, Convert.ToInt32(txtPort.Text), txtLogin.Text, txtPassword.Text))
             {
+                myUbntClient.SetSSHClient(mySshClient);
                 txtLog.Text += "Connected..." + Environment.NewLine;
                 timMain.Interval = 1500;
                 timMain.Start();
@@ -51,11 +53,8 @@ namespace BulletClient
 
         private void timMain_Tick(object sender, EventArgs e)
         {
-            string result = mySshClient.Command("mca-status | grep signal");
-            if (result != "")
-            {
-                lblSignal.Text = result.TrimEnd('\r', '\n').Split('=')[1];
-            }
+            int result = myUbntClient.GetSignal();
+            lblSignal.Text = result.ToString();
         }
     }
 }
