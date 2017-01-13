@@ -36,17 +36,26 @@ namespace BulletClient
 
         private void timMain_Tick(object sender, EventArgs e)
         {
-            int signal = myUbntClient.GetSignal();
-            cirPbSignal.Value = signal + 100;
-            cirPbSignal.Text = signal.ToString();
+            if (chkBoxSignal.Checked)
+            {
+                int signal = myUbntClient.GetSignal();
+                cirPbSignal.Value = signal + 100;
+                cirPbSignal.Text = signal.ToString();
+            }
 
-            int noise = myUbntClient.GetNoiseFloor();
-            cirPbNoise.Value = noise + 100;
-            cirPbNoise.Text = noise.ToString();
+            if (chkBoxNoise.Checked)
+            {
+                int noise = myUbntClient.GetNoiseFloor();
+                cirPbNoise.Value = noise + 100;
+                cirPbNoise.Text = noise.ToString();
+            }
 
-            int ccq = myUbntClient.GetTransmitCCQ();
-            cirPbCCQ.Value = ccq;
-            cirPbCCQ.Text = ccq.ToString();
+            if (chkBoxCCQ.Checked)
+            {
+                int ccq = myUbntClient.GetTransmitCCQ();
+                cirPbCCQ.Value = ccq;
+                cirPbCCQ.Text = ccq.ToString();
+            }
         }
 
         private void tsBtnRefresh_Click(object sender, EventArgs e)
@@ -93,6 +102,6 @@ namespace BulletClient
             cirPbNoise.Text = "0";
             cirPbCCQ.Value = 0;
             cirPbCCQ.Text = "0";
-        }
+        }       
     }
 }
