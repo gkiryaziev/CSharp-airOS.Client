@@ -53,8 +53,25 @@ namespace BulletClient
 
         private void timMain_Tick(object sender, EventArgs e)
         {
-            int result = myUbntClient.GetSignal();
-            lblSignal.Text = result.ToString();
+            lblSignal.Text = myUbntClient.GetSignal().ToString();
+        }
+
+        private void tsBtnRefresh_Click(object sender, EventArgs e)
+        {
+            GetStatus();
+        }
+
+        private void GetStatus()
+        {
+            lblBaseSSID.Text = myUbntClient.GetBaseSSID();
+            lblApMac.Text = myUbntClient.GetApMAC();
+            lblWlanIPAddress.Text = myUbntClient.GetWlanIpAddress();
+            lblFrequency.Text = myUbntClient.GetFrequency();
+            lblChannel.Text = "11";
+            lblACKTimeout.Text = myUbntClient.GetAckTimeout();
+            lblTxRate.Text = myUbntClient.GetTxRate();
+            lblRxRate.Text = myUbntClient.GetRxRate();
+            lblUptime.Text = myUbntClient.GetUptime();
         }
     }
 }

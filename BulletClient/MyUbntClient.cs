@@ -22,26 +22,17 @@ namespace BulletClient
         // Get Signal Strength
         //---------------------------
         public int GetSignal() {
-            string result = _client.Command("mca-status | grep signal");
-            if (result != "")
+            if (_client != null)
             {
-                return Convert.ToInt32(result.TrimEnd('\r', '\n').Split('=')[1]);
+                string result = _client.Command("mca-status | grep signal");
+                if (result != "")
+                {
+                    return Convert.ToInt32(result.TrimEnd('\r', '\n').Split('=')[1]);
+                }
+                return -100;
             }
             return -100;
         }
-
-        //---------------------------
-        // Get AP MAC
-        //---------------------------
-
-        //---------------------------
-        // Get Base Station SSID
-        //---------------------------
-
-        //---------------------------
-        // Get Frequency
-        //---------------------------
-
         //---------------------------
         // Get Noise Floor
         //---------------------------
@@ -51,27 +42,136 @@ namespace BulletClient
         //---------------------------
 
         //---------------------------
-        // Get Uptime
+        // Get Base Station SSID
+        //---------------------------
+        public string GetBaseSSID()
+        {
+            if (_client != null)
+            {
+                string result = _client.Command("mca-status | grep essid");
+                if (result != "")
+                {
+                    return result.TrimEnd('\r', '\n').Split('=')[1];
+                }
+                return "";
+            }
+            return "";
+        }
+        //---------------------------
+        // Get AP MAC
+        //---------------------------
+        public string GetApMAC()
+        {
+            if (_client != null)
+            {
+                string result = _client.Command("mca-status | grep apMac");
+                if (result != "")
+                {
+                    return result.TrimEnd('\r', '\n').Split('=')[1];
+                }
+                return "";
+            }
+            return "";
+        }
+        //---------------------------
+        // Get WLAN IP Address
+        //---------------------------
+        public string GetWlanIpAddress()
+        {
+            if (_client != null)
+            {
+                string result = _client.Command("mca-status | grep wlanIpAddress");
+                if (result != "")
+                {
+                    return result.TrimEnd('\r', '\n').Split('=')[1];
+                }
+                return "";
+            }
+            return "";
+        }
+        //---------------------------
+        // Get Frequency
+        //---------------------------
+        public string GetFrequency()
+        {
+            if (_client != null)
+            {
+                string result = _client.Command("mca-status | grep freq");
+                if (result != "")
+                {
+                    return result.TrimEnd('\r', '\n').Split('=')[1];
+                }
+                return "";
+            }
+            return "";
+        }
+        //---------------------------
+        // Get Channel
         //---------------------------
 
         //---------------------------
         // Get ACK Timeout
         //---------------------------
-
-        //---------------------------
-        // Get WLAN IP Address
-        //---------------------------
-
+        public string GetAckTimeout()
+        {
+            if (_client != null)
+            {
+                string result = _client.Command("mca-status | grep ackTimeout");
+                if (result != "")
+                {
+                    return result.TrimEnd('\r', '\n').Split('=')[1];
+                }
+                return "";
+            }
+            return "";
+        }
         //---------------------------
         // Get TX Rate
         //---------------------------
-
+        public string GetTxRate()
+        {
+            if (_client != null)
+            {
+                string result = _client.Command("mca-status | grep wlanTxRate");
+                if (result != "")
+                {
+                    return result.TrimEnd('\r', '\n').Split('=')[1];
+                }
+                return "";
+            }
+            return "";
+        }
         //---------------------------
         // Get RX Rate
         //---------------------------
-
+        public string GetRxRate()
+        {
+            if (_client != null)
+            {
+                string result = _client.Command("mca-status | grep wlanRxRate");
+                if (result != "")
+                {
+                    return result.TrimEnd('\r', '\n').Split('=')[1];
+                }
+                return "";
+            }
+            return "";
+        }
         //---------------------------
-        // Get Channel
+        // Get Uptime
         //---------------------------
+        public string GetUptime()
+        {
+            if (_client != null)
+            {
+                string result = _client.Command("mca-status | grep uptime");
+                if (result != "")
+                {
+                    return result.TrimEnd('\r', '\n').Split('=')[1];
+                }
+                return "";
+            }
+            return "";
+        }
     }
 }
