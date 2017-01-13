@@ -62,6 +62,15 @@
             this.grBoxSignal = new System.Windows.Forms.GroupBox();
             this.grBoxNoise = new System.Windows.Forms.GroupBox();
             this.grBoxCCQ = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.grBoxStatus.SuspendLayout();
             this.toolStripMain.SuspendLayout();
             this.grBoxSignal.SuspendLayout();
@@ -143,6 +152,15 @@
             // 
             // grBoxStatus
             // 
+            this.grBoxStatus.Controls.Add(this.label7);
+            this.grBoxStatus.Controls.Add(this.label8);
+            this.grBoxStatus.Controls.Add(this.label9);
+            this.grBoxStatus.Controls.Add(this.label4);
+            this.grBoxStatus.Controls.Add(this.label5);
+            this.grBoxStatus.Controls.Add(this.label6);
+            this.grBoxStatus.Controls.Add(this.label1);
+            this.grBoxStatus.Controls.Add(this.label2);
+            this.grBoxStatus.Controls.Add(this.label3);
             this.grBoxStatus.Controls.Add(this.lblWlanIPAddress);
             this.grBoxStatus.Controls.Add(this.lblRxRate);
             this.grBoxStatus.Controls.Add(this.lblTxRate);
@@ -152,6 +170,7 @@
             this.grBoxStatus.Controls.Add(this.lblUptime);
             this.grBoxStatus.Controls.Add(this.lblBaseSSID);
             this.grBoxStatus.Controls.Add(this.lblApMac);
+            this.grBoxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.grBoxStatus.Location = new System.Drawing.Point(12, 28);
             this.grBoxStatus.Name = "grBoxStatus";
             this.grBoxStatus.Size = new System.Drawing.Size(573, 106);
@@ -161,93 +180,111 @@
             // 
             // lblWlanIPAddress
             // 
-            this.lblWlanIPAddress.AutoSize = true;
-            this.lblWlanIPAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblWlanIPAddress.Location = new System.Drawing.Point(49, 73);
+            this.lblWlanIPAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblWlanIPAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblWlanIPAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblWlanIPAddress.Location = new System.Drawing.Point(95, 76);
             this.lblWlanIPAddress.Name = "lblWlanIPAddress";
-            this.lblWlanIPAddress.Size = new System.Drawing.Size(76, 17);
+            this.lblWlanIPAddress.Size = new System.Drawing.Size(121, 25);
             this.lblWlanIPAddress.TabIndex = 8;
-            this.lblWlanIPAddress.Text = "IP Address";
+            this.lblWlanIPAddress.Text = "192.192.192.192";
+            this.lblWlanIPAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblRxRate
             // 
-            this.lblRxRate.AutoSize = true;
-            this.lblRxRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblRxRate.Location = new System.Drawing.Point(437, 47);
+            this.lblRxRate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblRxRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblRxRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblRxRate.Location = new System.Drawing.Point(448, 48);
             this.lblRxRate.Name = "lblRxRate";
-            this.lblRxRate.Size = new System.Drawing.Size(58, 17);
+            this.lblRxRate.Size = new System.Drawing.Size(119, 25);
             this.lblRxRate.TabIndex = 7;
-            this.lblRxRate.Text = "Rx Rate";
+            this.lblRxRate.Text = "00 Mbps";
+            this.lblRxRate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblTxRate
             // 
-            this.lblTxRate.AutoSize = true;
-            this.lblTxRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblTxRate.Location = new System.Drawing.Point(437, 23);
+            this.lblTxRate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblTxRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTxRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblTxRate.Location = new System.Drawing.Point(448, 20);
             this.lblTxRate.Name = "lblTxRate";
-            this.lblTxRate.Size = new System.Drawing.Size(57, 17);
+            this.lblTxRate.Size = new System.Drawing.Size(119, 25);
             this.lblTxRate.TabIndex = 6;
-            this.lblTxRate.Text = "Tx Rate";
+            this.lblTxRate.Text = "00 Mpbs";
+            this.lblTxRate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblACKTimeout
             // 
-            this.lblACKTimeout.AutoSize = true;
-            this.lblACKTimeout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblACKTimeout.Location = new System.Drawing.Point(219, 73);
+            this.lblACKTimeout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblACKTimeout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblACKTimeout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblACKTimeout.Location = new System.Drawing.Point(312, 76);
             this.lblACKTimeout.Name = "lblACKTimeout";
-            this.lblACKTimeout.Size = new System.Drawing.Size(90, 17);
+            this.lblACKTimeout.Size = new System.Drawing.Size(71, 25);
             this.lblACKTimeout.TabIndex = 5;
-            this.lblACKTimeout.Text = "ACK Timeout";
+            this.lblACKTimeout.Text = "00";
+            this.lblACKTimeout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblChannel
             // 
-            this.lblChannel.AutoSize = true;
-            this.lblChannel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblChannel.Location = new System.Drawing.Point(219, 47);
+            this.lblChannel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblChannel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblChannel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblChannel.Location = new System.Drawing.Point(312, 48);
             this.lblChannel.Name = "lblChannel";
-            this.lblChannel.Size = new System.Drawing.Size(60, 17);
+            this.lblChannel.Size = new System.Drawing.Size(71, 25);
             this.lblChannel.TabIndex = 4;
-            this.lblChannel.Text = "Channel";
+            this.lblChannel.Text = "00";
+            this.lblChannel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblFrequency
             // 
-            this.lblFrequency.AutoSize = true;
-            this.lblFrequency.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblFrequency.Location = new System.Drawing.Point(219, 23);
+            this.lblFrequency.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblFrequency.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFrequency.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblFrequency.Location = new System.Drawing.Point(312, 20);
             this.lblFrequency.Name = "lblFrequency";
-            this.lblFrequency.Size = new System.Drawing.Size(75, 17);
+            this.lblFrequency.Size = new System.Drawing.Size(71, 25);
             this.lblFrequency.TabIndex = 3;
-            this.lblFrequency.Text = "Frequency";
+            this.lblFrequency.Text = "0000 MHz";
+            this.lblFrequency.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblUptime
             // 
-            this.lblUptime.AutoSize = true;
-            this.lblUptime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblUptime.Location = new System.Drawing.Point(437, 73);
+            this.lblUptime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblUptime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblUptime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblUptime.Location = new System.Drawing.Point(448, 76);
             this.lblUptime.Name = "lblUptime";
-            this.lblUptime.Size = new System.Drawing.Size(52, 17);
+            this.lblUptime.Size = new System.Drawing.Size(119, 25);
             this.lblUptime.TabIndex = 2;
             this.lblUptime.Text = "Uptime";
+            this.lblUptime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblBaseSSID
             // 
-            this.lblBaseSSID.AutoSize = true;
-            this.lblBaseSSID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblBaseSSID.Location = new System.Drawing.Point(49, 23);
+            this.lblBaseSSID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblBaseSSID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblBaseSSID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblBaseSSID.Location = new System.Drawing.Point(95, 20);
             this.lblBaseSSID.Name = "lblBaseSSID";
-            this.lblBaseSSID.Size = new System.Drawing.Size(39, 17);
+            this.lblBaseSSID.Size = new System.Drawing.Size(121, 25);
             this.lblBaseSSID.TabIndex = 1;
             this.lblBaseSSID.Text = "SSID";
+            this.lblBaseSSID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblApMac
             // 
-            this.lblApMac.AutoSize = true;
-            this.lblApMac.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblApMac.Location = new System.Drawing.Point(49, 47);
+            this.lblApMac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblApMac.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblApMac.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblApMac.Location = new System.Drawing.Point(95, 48);
             this.lblApMac.Name = "lblApMac";
-            this.lblApMac.Size = new System.Drawing.Size(37, 17);
+            this.lblApMac.Size = new System.Drawing.Size(121, 25);
             this.lblApMac.TabIndex = 0;
-            this.lblApMac.Text = "MAC";
+            this.lblApMac.Text = "DD:DD:DD:DD";
+            this.lblApMac.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // toolStripMain
             // 
@@ -259,7 +296,7 @@
             this.toolStripMain.Location = new System.Drawing.Point(0, 0);
             this.toolStripMain.Name = "toolStripMain";
             this.toolStripMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStripMain.Size = new System.Drawing.Size(730, 25);
+            this.toolStripMain.Size = new System.Drawing.Size(596, 25);
             this.toolStripMain.TabIndex = 12;
             this.toolStripMain.Text = "toolStripMain";
             // 
@@ -393,7 +430,7 @@
             this.chkBoxSignal.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkBoxSignal.Location = new System.Drawing.Point(9, 188);
             this.chkBoxSignal.Name = "chkBoxSignal";
-            this.chkBoxSignal.Size = new System.Drawing.Size(48, 17);
+            this.chkBoxSignal.Size = new System.Drawing.Size(56, 21);
             this.chkBoxSignal.TabIndex = 18;
             this.chkBoxSignal.Text = "Auto";
             this.chkBoxSignal.UseVisualStyleBackColor = true;
@@ -403,7 +440,7 @@
             this.chkBoxNoise.AutoSize = true;
             this.chkBoxNoise.Location = new System.Drawing.Point(9, 188);
             this.chkBoxNoise.Name = "chkBoxNoise";
-            this.chkBoxNoise.Size = new System.Drawing.Size(48, 17);
+            this.chkBoxNoise.Size = new System.Drawing.Size(56, 21);
             this.chkBoxNoise.TabIndex = 19;
             this.chkBoxNoise.Text = "Auto";
             this.chkBoxNoise.UseVisualStyleBackColor = true;
@@ -413,7 +450,7 @@
             this.chkBoxCCQ.AutoSize = true;
             this.chkBoxCCQ.Location = new System.Drawing.Point(9, 188);
             this.chkBoxCCQ.Name = "chkBoxCCQ";
-            this.chkBoxCCQ.Size = new System.Drawing.Size(48, 17);
+            this.chkBoxCCQ.Size = new System.Drawing.Size(56, 21);
             this.chkBoxCCQ.TabIndex = 20;
             this.chkBoxCCQ.Text = "Auto";
             this.chkBoxCCQ.UseVisualStyleBackColor = true;
@@ -422,6 +459,7 @@
             // 
             this.grBoxSignal.Controls.Add(this.cirPbSignal);
             this.grBoxSignal.Controls.Add(this.chkBoxSignal);
+            this.grBoxSignal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.grBoxSignal.Location = new System.Drawing.Point(12, 140);
             this.grBoxSignal.Name = "grBoxSignal";
             this.grBoxSignal.Size = new System.Drawing.Size(187, 213);
@@ -433,6 +471,7 @@
             // 
             this.grBoxNoise.Controls.Add(this.cirPbNoise);
             this.grBoxNoise.Controls.Add(this.chkBoxNoise);
+            this.grBoxNoise.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.grBoxNoise.Location = new System.Drawing.Point(205, 140);
             this.grBoxNoise.Name = "grBoxNoise";
             this.grBoxNoise.Size = new System.Drawing.Size(187, 213);
@@ -444,6 +483,7 @@
             // 
             this.grBoxCCQ.Controls.Add(this.cirPbCCQ);
             this.grBoxCCQ.Controls.Add(this.chkBoxCCQ);
+            this.grBoxCCQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.grBoxCCQ.Location = new System.Drawing.Point(398, 140);
             this.grBoxCCQ.Name = "grBoxCCQ";
             this.grBoxCCQ.Size = new System.Drawing.Size(187, 213);
@@ -451,11 +491,119 @@
             this.grBoxCCQ.TabStop = false;
             this.grBoxCCQ.Text = "CCQ";
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(9, 76);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 25);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "IP Address";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(9, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 25);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "AP SSID";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(9, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 25);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "AP MAC";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(222, 76);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 25);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "ACK Timeout";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(222, 48);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(84, 25);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Channel";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(222, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(84, 25);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Frequency";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(389, 48);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 25);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Rx Rate";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(389, 20);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 25);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Tx Rate";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(389, 76);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 25);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Uptime";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 501);
+            this.ClientSize = new System.Drawing.Size(596, 479);
             this.Controls.Add(this.grBoxCCQ);
             this.Controls.Add(this.grBoxNoise);
             this.Controls.Add(this.grBoxSignal);
@@ -476,7 +624,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.grBoxStatus.ResumeLayout(false);
-            this.grBoxStatus.PerformLayout();
             this.toolStripMain.ResumeLayout(false);
             this.toolStripMain.PerformLayout();
             this.grBoxSignal.ResumeLayout(false);
@@ -524,6 +671,15 @@
         private System.Windows.Forms.GroupBox grBoxSignal;
         private System.Windows.Forms.GroupBox grBoxNoise;
         private System.Windows.Forms.GroupBox grBoxCCQ;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
 

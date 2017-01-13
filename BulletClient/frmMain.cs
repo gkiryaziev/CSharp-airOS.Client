@@ -68,11 +68,11 @@ namespace BulletClient
             lblBaseSSID.Text = myUbntClient.GetBaseSSID();
             lblApMac.Text = myUbntClient.GetApMAC();
             lblWlanIPAddress.Text = myUbntClient.GetWlanIpAddress();
-            lblFrequency.Text = myUbntClient.GetFrequency();
+            lblFrequency.Text = myUbntClient.GetFrequency() + " MHz";
             lblChannel.Text = myUbntClient.GetChannel();
             lblACKTimeout.Text = myUbntClient.GetAckTimeout();
-            lblTxRate.Text = myUbntClient.GetTxRate();
-            lblRxRate.Text = myUbntClient.GetRxRate();
+            lblTxRate.Text = myUbntClient.GetTxRate() + " Mbps";
+            lblRxRate.Text = myUbntClient.GetRxRate() + " Mbps";
             lblUptime.Text = myUbntClient.GetUptimeFormatted();
         }
 
@@ -102,6 +102,6 @@ namespace BulletClient
             cirPbNoise.Text = "0";
             cirPbCCQ.Value = 0;
             cirPbCCQ.Text = "0";
-        }       
+        }        
     }
 }
