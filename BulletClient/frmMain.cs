@@ -83,7 +83,7 @@ namespace BulletClient
                 myUbntClient.SetSSHClient(mySshClient);
                 txtLog.Text += "Connected..." + Environment.NewLine;
                 GetStatus();
-                timMain.Interval = 1500;
+                timMain.Interval = Convert.ToInt32(txtInterval.Text);
                 timMain.Start();
             }
         }
