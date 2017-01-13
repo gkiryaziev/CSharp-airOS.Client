@@ -152,6 +152,7 @@
             // 
             // grBoxStatus
             // 
+            this.grBoxStatus.BackColor = System.Drawing.SystemColors.Control;
             this.grBoxStatus.Controls.Add(this.label7);
             this.grBoxStatus.Controls.Add(this.label8);
             this.grBoxStatus.Controls.Add(this.label9);
@@ -170,7 +171,7 @@
             this.grBoxStatus.Controls.Add(this.lblUptime);
             this.grBoxStatus.Controls.Add(this.lblBaseSSID);
             this.grBoxStatus.Controls.Add(this.lblApMac);
-            this.grBoxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.grBoxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.grBoxStatus.Location = new System.Drawing.Point(12, 28);
             this.grBoxStatus.Name = "grBoxStatus";
             this.grBoxStatus.Size = new System.Drawing.Size(573, 106);
@@ -180,7 +181,7 @@
             // 
             // lblWlanIPAddress
             // 
-            this.lblWlanIPAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblWlanIPAddress.BackColor = System.Drawing.SystemColors.Control;
             this.lblWlanIPAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblWlanIPAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblWlanIPAddress.Location = new System.Drawing.Point(95, 76);
@@ -188,11 +189,11 @@
             this.lblWlanIPAddress.Size = new System.Drawing.Size(121, 25);
             this.lblWlanIPAddress.TabIndex = 8;
             this.lblWlanIPAddress.Text = "192.192.192.192";
-            this.lblWlanIPAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblWlanIPAddress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblRxRate
             // 
-            this.lblRxRate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblRxRate.BackColor = System.Drawing.SystemColors.Control;
             this.lblRxRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblRxRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblRxRate.Location = new System.Drawing.Point(448, 48);
@@ -200,11 +201,11 @@
             this.lblRxRate.Size = new System.Drawing.Size(119, 25);
             this.lblRxRate.TabIndex = 7;
             this.lblRxRate.Text = "00 Mbps";
-            this.lblRxRate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblRxRate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTxRate
             // 
-            this.lblTxRate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblTxRate.BackColor = System.Drawing.SystemColors.Control;
             this.lblTxRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTxRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblTxRate.Location = new System.Drawing.Point(448, 20);
@@ -212,11 +213,11 @@
             this.lblTxRate.Size = new System.Drawing.Size(119, 25);
             this.lblTxRate.TabIndex = 6;
             this.lblTxRate.Text = "00 Mpbs";
-            this.lblTxRate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTxRate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblACKTimeout
             // 
-            this.lblACKTimeout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblACKTimeout.BackColor = System.Drawing.SystemColors.Control;
             this.lblACKTimeout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblACKTimeout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblACKTimeout.Location = new System.Drawing.Point(312, 76);
@@ -228,7 +229,7 @@
             // 
             // lblChannel
             // 
-            this.lblChannel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblChannel.BackColor = System.Drawing.SystemColors.Control;
             this.lblChannel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblChannel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblChannel.Location = new System.Drawing.Point(312, 48);
@@ -240,7 +241,7 @@
             // 
             // lblFrequency
             // 
-            this.lblFrequency.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblFrequency.BackColor = System.Drawing.SystemColors.Control;
             this.lblFrequency.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblFrequency.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblFrequency.Location = new System.Drawing.Point(312, 20);
@@ -252,7 +253,7 @@
             // 
             // lblUptime
             // 
-            this.lblUptime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblUptime.BackColor = System.Drawing.SystemColors.Control;
             this.lblUptime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblUptime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblUptime.Location = new System.Drawing.Point(448, 76);
@@ -260,11 +261,11 @@
             this.lblUptime.Size = new System.Drawing.Size(119, 25);
             this.lblUptime.TabIndex = 2;
             this.lblUptime.Text = "Uptime";
-            this.lblUptime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblUptime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblBaseSSID
             // 
-            this.lblBaseSSID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblBaseSSID.BackColor = System.Drawing.SystemColors.Control;
             this.lblBaseSSID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblBaseSSID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblBaseSSID.Location = new System.Drawing.Point(95, 20);
@@ -272,11 +273,11 @@
             this.lblBaseSSID.Size = new System.Drawing.Size(121, 25);
             this.lblBaseSSID.TabIndex = 1;
             this.lblBaseSSID.Text = "SSID";
-            this.lblBaseSSID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblBaseSSID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblApMac
             // 
-            this.lblApMac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblApMac.BackColor = System.Drawing.SystemColors.Control;
             this.lblApMac.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblApMac.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblApMac.Location = new System.Drawing.Point(95, 48);
@@ -284,7 +285,7 @@
             this.lblApMac.Size = new System.Drawing.Size(121, 25);
             this.lblApMac.TabIndex = 0;
             this.lblApMac.Text = "DD:DD:DD:DD";
-            this.lblApMac.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblApMac.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // toolStripMain
             // 
@@ -302,25 +303,28 @@
             // 
             // tsBtnConnect
             // 
+            this.tsBtnConnect.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnConnect.Image")));
             this.tsBtnConnect.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnConnect.Name = "tsBtnConnect";
-            this.tsBtnConnect.Size = new System.Drawing.Size(56, 22);
+            this.tsBtnConnect.Size = new System.Drawing.Size(72, 22);
             this.tsBtnConnect.Text = "Connect";
             this.tsBtnConnect.Click += new System.EventHandler(this.tsBtnConnect_Click);
             // 
             // tsBtnDisconnect
             // 
+            this.tsBtnDisconnect.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnDisconnect.Image")));
             this.tsBtnDisconnect.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnDisconnect.Name = "tsBtnDisconnect";
-            this.tsBtnDisconnect.Size = new System.Drawing.Size(70, 22);
+            this.tsBtnDisconnect.Size = new System.Drawing.Size(86, 22);
             this.tsBtnDisconnect.Text = "Disconnect";
             this.tsBtnDisconnect.Click += new System.EventHandler(this.tsBtnDisconnect_Click);
             // 
             // tsBtnRefresh
             // 
+            this.tsBtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnRefresh.Image")));
             this.tsBtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnRefresh.Name = "tsBtnRefresh";
-            this.tsBtnRefresh.Size = new System.Drawing.Size(50, 22);
+            this.tsBtnRefresh.Size = new System.Drawing.Size(66, 22);
             this.tsBtnRefresh.Text = "Refresh";
             this.tsBtnRefresh.Click += new System.EventHandler(this.tsBtnRefresh_Click);
             // 
@@ -407,7 +411,7 @@
             this.cirPbCCQ.OuterColor = System.Drawing.Color.Gray;
             this.cirPbCCQ.OuterMargin = -25;
             this.cirPbCCQ.OuterWidth = 20;
-            this.cirPbCCQ.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(220)))), ((int)(((byte)(57)))));
+            this.cirPbCCQ.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.cirPbCCQ.ProgressWidth = 25;
             this.cirPbCCQ.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cirPbCCQ.Size = new System.Drawing.Size(170, 170);
@@ -430,7 +434,7 @@
             this.chkBoxSignal.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkBoxSignal.Location = new System.Drawing.Point(9, 188);
             this.chkBoxSignal.Name = "chkBoxSignal";
-            this.chkBoxSignal.Size = new System.Drawing.Size(56, 21);
+            this.chkBoxSignal.Size = new System.Drawing.Size(50, 19);
             this.chkBoxSignal.TabIndex = 18;
             this.chkBoxSignal.Text = "Auto";
             this.chkBoxSignal.UseVisualStyleBackColor = true;
@@ -440,7 +444,7 @@
             this.chkBoxNoise.AutoSize = true;
             this.chkBoxNoise.Location = new System.Drawing.Point(9, 188);
             this.chkBoxNoise.Name = "chkBoxNoise";
-            this.chkBoxNoise.Size = new System.Drawing.Size(56, 21);
+            this.chkBoxNoise.Size = new System.Drawing.Size(50, 19);
             this.chkBoxNoise.TabIndex = 19;
             this.chkBoxNoise.Text = "Auto";
             this.chkBoxNoise.UseVisualStyleBackColor = true;
@@ -450,16 +454,17 @@
             this.chkBoxCCQ.AutoSize = true;
             this.chkBoxCCQ.Location = new System.Drawing.Point(9, 188);
             this.chkBoxCCQ.Name = "chkBoxCCQ";
-            this.chkBoxCCQ.Size = new System.Drawing.Size(56, 21);
+            this.chkBoxCCQ.Size = new System.Drawing.Size(50, 19);
             this.chkBoxCCQ.TabIndex = 20;
             this.chkBoxCCQ.Text = "Auto";
             this.chkBoxCCQ.UseVisualStyleBackColor = true;
             // 
             // grBoxSignal
             // 
+            this.grBoxSignal.BackColor = System.Drawing.SystemColors.Control;
             this.grBoxSignal.Controls.Add(this.cirPbSignal);
             this.grBoxSignal.Controls.Add(this.chkBoxSignal);
-            this.grBoxSignal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.grBoxSignal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.grBoxSignal.Location = new System.Drawing.Point(12, 140);
             this.grBoxSignal.Name = "grBoxSignal";
             this.grBoxSignal.Size = new System.Drawing.Size(187, 213);
@@ -469,9 +474,10 @@
             // 
             // grBoxNoise
             // 
+            this.grBoxNoise.BackColor = System.Drawing.SystemColors.Control;
             this.grBoxNoise.Controls.Add(this.cirPbNoise);
             this.grBoxNoise.Controls.Add(this.chkBoxNoise);
-            this.grBoxNoise.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.grBoxNoise.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.grBoxNoise.Location = new System.Drawing.Point(205, 140);
             this.grBoxNoise.Name = "grBoxNoise";
             this.grBoxNoise.Size = new System.Drawing.Size(187, 213);
@@ -481,9 +487,10 @@
             // 
             // grBoxCCQ
             // 
+            this.grBoxCCQ.BackColor = System.Drawing.SystemColors.Control;
             this.grBoxCCQ.Controls.Add(this.cirPbCCQ);
             this.grBoxCCQ.Controls.Add(this.chkBoxCCQ);
-            this.grBoxCCQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.grBoxCCQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.grBoxCCQ.Location = new System.Drawing.Point(398, 140);
             this.grBoxCCQ.Name = "grBoxCCQ";
             this.grBoxCCQ.Size = new System.Drawing.Size(187, 213);
@@ -493,7 +500,7 @@
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(9, 76);
@@ -505,7 +512,7 @@
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(9, 20);
@@ -517,7 +524,7 @@
             // 
             // label3
             // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label3.BackColor = System.Drawing.SystemColors.Control;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(9, 48);
@@ -529,7 +536,7 @@
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label4.BackColor = System.Drawing.SystemColors.Control;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(222, 76);
@@ -541,7 +548,7 @@
             // 
             // label5
             // 
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label5.BackColor = System.Drawing.SystemColors.Control;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(222, 48);
@@ -553,7 +560,7 @@
             // 
             // label6
             // 
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label6.BackColor = System.Drawing.SystemColors.Control;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(222, 20);
@@ -565,7 +572,7 @@
             // 
             // label7
             // 
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label7.BackColor = System.Drawing.SystemColors.Control;
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(389, 48);
@@ -577,7 +584,7 @@
             // 
             // label8
             // 
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label8.BackColor = System.Drawing.SystemColors.Control;
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.Location = new System.Drawing.Point(389, 20);
@@ -589,7 +596,7 @@
             // 
             // label9
             // 
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label9.BackColor = System.Drawing.SystemColors.Control;
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.Location = new System.Drawing.Point(389, 76);
@@ -618,6 +625,7 @@
             this.Controls.Add(this.btnCommand);
             this.Controls.Add(this.txtCommand);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.Text = "Ubnt SSH Client";
