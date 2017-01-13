@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.txtCommand = new System.Windows.Forms.TextBox();
             this.btnCommand = new System.Windows.Forms.Button();
             this.txtLog = new System.Windows.Forms.TextBox();
@@ -43,28 +42,28 @@
             this.timMain = new System.Windows.Forms.Timer(this.components);
             this.txtInterval = new System.Windows.Forms.TextBox();
             this.grbStatus = new System.Windows.Forms.GroupBox();
+            this.lblWlanIPAddress = new System.Windows.Forms.Label();
+            this.lblRxRate = new System.Windows.Forms.Label();
+            this.lblTxRate = new System.Windows.Forms.Label();
+            this.lblACKTimeout = new System.Windows.Forms.Label();
+            this.lblChannel = new System.Windows.Forms.Label();
+            this.lblFrequency = new System.Windows.Forms.Label();
+            this.lblUptime = new System.Windows.Forms.Label();
+            this.lblBaseSSID = new System.Windows.Forms.Label();
             this.lblApMac = new System.Windows.Forms.Label();
             this.toolStripMain = new System.Windows.Forms.ToolStrip();
-            this.tsBtnRefresh = new System.Windows.Forms.ToolStripButton();
-            this.lblBaseSSID = new System.Windows.Forms.Label();
-            this.lblUptime = new System.Windows.Forms.Label();
-            this.lblFrequency = new System.Windows.Forms.Label();
-            this.lblChannel = new System.Windows.Forms.Label();
-            this.lblACKTimeout = new System.Windows.Forms.Label();
-            this.lblTxRate = new System.Windows.Forms.Label();
-            this.lblRxRate = new System.Windows.Forms.Label();
-            this.lblWlanIPAddress = new System.Windows.Forms.Label();
-            this.lblNoiseFloor = new System.Windows.Forms.Label();
-            this.lblTransmitCCQ = new System.Windows.Forms.Label();
             this.tsBtnConnect = new System.Windows.Forms.ToolStripButton();
             this.tsBtnDisconnect = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnRefresh = new System.Windows.Forms.ToolStripButton();
+            this.lblNoiseFloor = new System.Windows.Forms.Label();
+            this.lblTransmitCCQ = new System.Windows.Forms.Label();
             this.grbStatus.SuspendLayout();
             this.toolStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtCommand
             // 
-            this.txtCommand.Location = new System.Drawing.Point(29, 80);
+            this.txtCommand.Location = new System.Drawing.Point(12, 293);
             this.txtCommand.Name = "txtCommand";
             this.txtCommand.Size = new System.Drawing.Size(418, 20);
             this.txtCommand.TabIndex = 0;
@@ -72,7 +71,7 @@
             // 
             // btnCommand
             // 
-            this.btnCommand.Location = new System.Drawing.Point(453, 79);
+            this.btnCommand.Location = new System.Drawing.Point(436, 292);
             this.btnCommand.Name = "btnCommand";
             this.btnCommand.Size = new System.Drawing.Size(154, 23);
             this.btnCommand.TabIndex = 1;
@@ -91,7 +90,7 @@
             // 
             // btnConnect
             // 
-            this.btnConnect.Location = new System.Drawing.Point(453, 53);
+            this.btnConnect.Location = new System.Drawing.Point(436, 266);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(75, 23);
             this.btnConnect.TabIndex = 3;
@@ -101,7 +100,7 @@
             // 
             // btnDisconnect
             // 
-            this.btnDisconnect.Location = new System.Drawing.Point(534, 53);
+            this.btnDisconnect.Location = new System.Drawing.Point(517, 266);
             this.btnDisconnect.Name = "btnDisconnect";
             this.btnDisconnect.Size = new System.Drawing.Size(73, 23);
             this.btnDisconnect.TabIndex = 4;
@@ -111,7 +110,7 @@
             // 
             // txtHost
             // 
-            this.txtHost.Location = new System.Drawing.Point(29, 54);
+            this.txtHost.Location = new System.Drawing.Point(12, 267);
             this.txtHost.Name = "txtHost";
             this.txtHost.Size = new System.Drawing.Size(139, 20);
             this.txtHost.TabIndex = 5;
@@ -119,7 +118,7 @@
             // 
             // txtPort
             // 
-            this.txtPort.Location = new System.Drawing.Point(174, 54);
+            this.txtPort.Location = new System.Drawing.Point(157, 267);
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(51, 20);
             this.txtPort.TabIndex = 6;
@@ -127,7 +126,7 @@
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(231, 54);
+            this.txtLogin.Location = new System.Drawing.Point(214, 267);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(84, 20);
             this.txtLogin.TabIndex = 7;
@@ -135,7 +134,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(321, 54);
+            this.txtPassword.Location = new System.Drawing.Point(304, 267);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(71, 20);
@@ -147,7 +146,7 @@
             this.lblSignal.AutoSize = true;
             this.lblSignal.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblSignal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblSignal.Location = new System.Drawing.Point(29, 103);
+            this.lblSignal.Location = new System.Drawing.Point(74, 174);
             this.lblSignal.Name = "lblSignal";
             this.lblSignal.Size = new System.Drawing.Size(43, 46);
             this.lblSignal.TabIndex = 9;
@@ -159,7 +158,7 @@
             // 
             // txtInterval
             // 
-            this.txtInterval.Location = new System.Drawing.Point(398, 54);
+            this.txtInterval.Location = new System.Drawing.Point(381, 267);
             this.txtInterval.Name = "txtInterval";
             this.txtInterval.Size = new System.Drawing.Size(49, 20);
             this.txtInterval.TabIndex = 10;
@@ -176,12 +175,84 @@
             this.grbStatus.Controls.Add(this.lblUptime);
             this.grbStatus.Controls.Add(this.lblBaseSSID);
             this.grbStatus.Controls.Add(this.lblApMac);
-            this.grbStatus.Location = new System.Drawing.Point(29, 168);
+            this.grbStatus.Location = new System.Drawing.Point(12, 37);
             this.grbStatus.Name = "grbStatus";
-            this.grbStatus.Size = new System.Drawing.Size(415, 152);
+            this.grbStatus.Size = new System.Drawing.Size(415, 65);
             this.grbStatus.TabIndex = 11;
             this.grbStatus.TabStop = false;
             this.grbStatus.Text = "Status";
+            // 
+            // lblWlanIPAddress
+            // 
+            this.lblWlanIPAddress.AutoSize = true;
+            this.lblWlanIPAddress.Location = new System.Drawing.Point(6, 42);
+            this.lblWlanIPAddress.Name = "lblWlanIPAddress";
+            this.lblWlanIPAddress.Size = new System.Drawing.Size(90, 13);
+            this.lblWlanIPAddress.TabIndex = 8;
+            this.lblWlanIPAddress.Text = "lblWlanIPAddress";
+            // 
+            // lblRxRate
+            // 
+            this.lblRxRate.AutoSize = true;
+            this.lblRxRate.Location = new System.Drawing.Point(254, 29);
+            this.lblRxRate.Name = "lblRxRate";
+            this.lblRxRate.Size = new System.Drawing.Size(53, 13);
+            this.lblRxRate.TabIndex = 7;
+            this.lblRxRate.Text = "lblRxRate";
+            // 
+            // lblTxRate
+            // 
+            this.lblTxRate.AutoSize = true;
+            this.lblTxRate.Location = new System.Drawing.Point(254, 16);
+            this.lblTxRate.Name = "lblTxRate";
+            this.lblTxRate.Size = new System.Drawing.Size(52, 13);
+            this.lblTxRate.TabIndex = 6;
+            this.lblTxRate.Text = "lblTxRate";
+            // 
+            // lblACKTimeout
+            // 
+            this.lblACKTimeout.AutoSize = true;
+            this.lblACKTimeout.Location = new System.Drawing.Point(129, 42);
+            this.lblACKTimeout.Name = "lblACKTimeout";
+            this.lblACKTimeout.Size = new System.Drawing.Size(76, 13);
+            this.lblACKTimeout.TabIndex = 5;
+            this.lblACKTimeout.Text = "lblACKTimeout";
+            // 
+            // lblChannel
+            // 
+            this.lblChannel.AutoSize = true;
+            this.lblChannel.Location = new System.Drawing.Point(129, 29);
+            this.lblChannel.Name = "lblChannel";
+            this.lblChannel.Size = new System.Drawing.Size(56, 13);
+            this.lblChannel.TabIndex = 4;
+            this.lblChannel.Text = "lblChannel";
+            // 
+            // lblFrequency
+            // 
+            this.lblFrequency.AutoSize = true;
+            this.lblFrequency.Location = new System.Drawing.Point(129, 16);
+            this.lblFrequency.Name = "lblFrequency";
+            this.lblFrequency.Size = new System.Drawing.Size(67, 13);
+            this.lblFrequency.TabIndex = 3;
+            this.lblFrequency.Text = "lblFrequency";
+            // 
+            // lblUptime
+            // 
+            this.lblUptime.AutoSize = true;
+            this.lblUptime.Location = new System.Drawing.Point(254, 42);
+            this.lblUptime.Name = "lblUptime";
+            this.lblUptime.Size = new System.Drawing.Size(50, 13);
+            this.lblUptime.TabIndex = 2;
+            this.lblUptime.Text = "lblUptime";
+            // 
+            // lblBaseSSID
+            // 
+            this.lblBaseSSID.AutoSize = true;
+            this.lblBaseSSID.Location = new System.Drawing.Point(6, 16);
+            this.lblBaseSSID.Name = "lblBaseSSID";
+            this.lblBaseSSID.Size = new System.Drawing.Size(66, 13);
+            this.lblBaseSSID.TabIndex = 1;
+            this.lblBaseSSID.Text = "lblBaseSSID";
             // 
             // lblApMac
             // 
@@ -194,10 +265,11 @@
             // 
             // toolStripMain
             // 
+            this.toolStripMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsBtnRefresh,
             this.tsBtnConnect,
-            this.tsBtnDisconnect});
+            this.tsBtnDisconnect,
+            this.tsBtnRefresh});
             this.toolStripMain.Location = new System.Drawing.Point(0, 0);
             this.toolStripMain.Name = "toolStripMain";
             this.toolStripMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -205,94 +277,34 @@
             this.toolStripMain.TabIndex = 12;
             this.toolStripMain.Text = "toolStripMain";
             // 
+            // tsBtnConnect
+            // 
+            this.tsBtnConnect.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnConnect.Name = "tsBtnConnect";
+            this.tsBtnConnect.Size = new System.Drawing.Size(56, 22);
+            this.tsBtnConnect.Text = "Connect";
+            // 
+            // tsBtnDisconnect
+            // 
+            this.tsBtnDisconnect.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnDisconnect.Name = "tsBtnDisconnect";
+            this.tsBtnDisconnect.Size = new System.Drawing.Size(70, 22);
+            this.tsBtnDisconnect.Text = "Disconnect";
+            // 
             // tsBtnRefresh
             // 
-            this.tsBtnRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsBtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnRefresh.Image")));
             this.tsBtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnRefresh.Name = "tsBtnRefresh";
-            this.tsBtnRefresh.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnRefresh.Size = new System.Drawing.Size(50, 22);
             this.tsBtnRefresh.Text = "Refresh";
             this.tsBtnRefresh.Click += new System.EventHandler(this.tsBtnRefresh_Click);
-            // 
-            // lblBaseSSID
-            // 
-            this.lblBaseSSID.AutoSize = true;
-            this.lblBaseSSID.Location = new System.Drawing.Point(6, 16);
-            this.lblBaseSSID.Name = "lblBaseSSID";
-            this.lblBaseSSID.Size = new System.Drawing.Size(66, 13);
-            this.lblBaseSSID.TabIndex = 1;
-            this.lblBaseSSID.Text = "lblBaseSSID";
-            // 
-            // lblUptime
-            // 
-            this.lblUptime.AutoSize = true;
-            this.lblUptime.Location = new System.Drawing.Point(254, 42);
-            this.lblUptime.Name = "lblUptime";
-            this.lblUptime.Size = new System.Drawing.Size(50, 13);
-            this.lblUptime.TabIndex = 2;
-            this.lblUptime.Text = "lblUptime";
-            // 
-            // lblFrequency
-            // 
-            this.lblFrequency.AutoSize = true;
-            this.lblFrequency.Location = new System.Drawing.Point(129, 16);
-            this.lblFrequency.Name = "lblFrequency";
-            this.lblFrequency.Size = new System.Drawing.Size(67, 13);
-            this.lblFrequency.TabIndex = 3;
-            this.lblFrequency.Text = "lblFrequency";
-            // 
-            // lblChannel
-            // 
-            this.lblChannel.AutoSize = true;
-            this.lblChannel.Location = new System.Drawing.Point(129, 29);
-            this.lblChannel.Name = "lblChannel";
-            this.lblChannel.Size = new System.Drawing.Size(56, 13);
-            this.lblChannel.TabIndex = 4;
-            this.lblChannel.Text = "lblChannel";
-            // 
-            // lblACKTimeout
-            // 
-            this.lblACKTimeout.AutoSize = true;
-            this.lblACKTimeout.Location = new System.Drawing.Point(129, 42);
-            this.lblACKTimeout.Name = "lblACKTimeout";
-            this.lblACKTimeout.Size = new System.Drawing.Size(76, 13);
-            this.lblACKTimeout.TabIndex = 5;
-            this.lblACKTimeout.Text = "lblACKTimeout";
-            // 
-            // lblTxRate
-            // 
-            this.lblTxRate.AutoSize = true;
-            this.lblTxRate.Location = new System.Drawing.Point(254, 16);
-            this.lblTxRate.Name = "lblTxRate";
-            this.lblTxRate.Size = new System.Drawing.Size(52, 13);
-            this.lblTxRate.TabIndex = 6;
-            this.lblTxRate.Text = "lblTxRate";
-            // 
-            // lblRxRate
-            // 
-            this.lblRxRate.AutoSize = true;
-            this.lblRxRate.Location = new System.Drawing.Point(254, 29);
-            this.lblRxRate.Name = "lblRxRate";
-            this.lblRxRate.Size = new System.Drawing.Size(53, 13);
-            this.lblRxRate.TabIndex = 7;
-            this.lblRxRate.Text = "lblRxRate";
-            // 
-            // lblWlanIPAddress
-            // 
-            this.lblWlanIPAddress.AutoSize = true;
-            this.lblWlanIPAddress.Location = new System.Drawing.Point(6, 42);
-            this.lblWlanIPAddress.Name = "lblWlanIPAddress";
-            this.lblWlanIPAddress.Size = new System.Drawing.Size(90, 13);
-            this.lblWlanIPAddress.TabIndex = 8;
-            this.lblWlanIPAddress.Text = "lblWlanIPAddress";
             // 
             // lblNoiseFloor
             // 
             this.lblNoiseFloor.AutoSize = true;
             this.lblNoiseFloor.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblNoiseFloor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblNoiseFloor.Location = new System.Drawing.Point(110, 103);
+            this.lblNoiseFloor.Location = new System.Drawing.Point(155, 174);
             this.lblNoiseFloor.Name = "lblNoiseFloor";
             this.lblNoiseFloor.Size = new System.Drawing.Size(43, 46);
             this.lblNoiseFloor.TabIndex = 13;
@@ -303,29 +315,11 @@
             this.lblTransmitCCQ.AutoSize = true;
             this.lblTransmitCCQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblTransmitCCQ.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblTransmitCCQ.Location = new System.Drawing.Point(191, 103);
+            this.lblTransmitCCQ.Location = new System.Drawing.Point(236, 174);
             this.lblTransmitCCQ.Name = "lblTransmitCCQ";
             this.lblTransmitCCQ.Size = new System.Drawing.Size(43, 46);
             this.lblTransmitCCQ.TabIndex = 14;
             this.lblTransmitCCQ.Text = "0";
-            // 
-            // tsBtnConnect
-            // 
-            this.tsBtnConnect.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsBtnConnect.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnConnect.Image")));
-            this.tsBtnConnect.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsBtnConnect.Name = "tsBtnConnect";
-            this.tsBtnConnect.Size = new System.Drawing.Size(23, 22);
-            this.tsBtnConnect.Text = "Connect";
-            // 
-            // tsBtnDisconnect
-            // 
-            this.tsBtnDisconnect.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsBtnDisconnect.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnDisconnect.Image")));
-            this.tsBtnDisconnect.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsBtnDisconnect.Name = "tsBtnDisconnect";
-            this.tsBtnDisconnect.Size = new System.Drawing.Size(23, 22);
-            this.tsBtnDisconnect.Text = "Disconnect";
             // 
             // frmMain
             // 

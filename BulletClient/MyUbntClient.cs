@@ -206,15 +206,19 @@ namespace BulletClient
         //---------------------------
         public string GetUptimeFormatted()
         {
-            TimeSpan ts = TimeSpan.FromSeconds(Convert.ToDouble(GetUptime()));
-            if (ts.Days > 0)
+            if (_client != null)
             {
-                return ts.ToString(@"d' day(-s) 'hh\:mm\:ss");
+                TimeSpan ts = TimeSpan.FromSeconds(Convert.ToDouble(GetUptime()));
+                if (ts.Days > 0)
+                {
+                    return ts.ToString(@"d' day(-s) 'hh\:mm\:ss");
+                }
+                else
+                {
+                    return ts.ToString(@"hh\:mm\:ss");
+                }
             }
-            else
-            {
-                return ts.ToString(@"hh\:mm\:ss");
-            }
+            return "";
         }
     }
 }
