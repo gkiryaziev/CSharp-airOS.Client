@@ -10,14 +10,19 @@ namespace BulletClient
     class MySSHClient
     {
         private SshClient client = null;
+        private SshCommand cmd = null;
 
         public bool Open(string host, int port, string login, string password)
         {
-            if (client == null)
+            if (client == null || !client.IsConnected)
+            {
                 client = new SshClient(host, port, login, password);
-
-            if (!client.IsConnected)
                 client.Connect();
+                if (client.IsConnected)
+                {
+                    cmd = client.CreateCommand("pwd");
+                }
+            }
 
             if (client.IsConnected)
                 return true;
@@ -34,7 +39,7 @@ namespace BulletClient
         public string Command(string command)
         {
             if (client != null && client.IsConnected)
-                return client.RunCommand(command).Result;
+                return cmd.Execute(command);
             else
                 return "";
         }
