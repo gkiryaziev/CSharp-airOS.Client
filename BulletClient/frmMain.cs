@@ -25,23 +25,6 @@ namespace BulletClient
             mySshClient.Close();
         }
 
-        private void btnConnect_Click(object sender, EventArgs e)
-        {
-            if (mySshClient.Open(txtHost.Text, Convert.ToInt32(txtPort.Text), txtLogin.Text, txtPassword.Text))
-            {
-                myUbntClient.SetSSHClient(mySshClient);
-                txtLog.Text += "Connected..." + Environment.NewLine;
-                timMain.Interval = 1500;
-                timMain.Start();
-            }
-        }
-
-        private void btnDisconnect_Click(object sender, EventArgs e)
-        {
-            timMain.Stop();
-            mySshClient.Close();
-        }
-
         private void btnCommand_Click(object sender, EventArgs e)
         {
             String result = mySshClient.Command(txtCommand.Text);
@@ -53,9 +36,17 @@ namespace BulletClient
 
         private void timMain_Tick(object sender, EventArgs e)
         {
-            lblSignal.Text = myUbntClient.GetSignal().ToString();
-            lblNoiseFloor.Text = myUbntClient.GetNoiseFloor().ToString();
-            lblTransmitCCQ.Text = myUbntClient.GetTransmitCCQ().ToString();
+            int signal = myUbntClient.GetSignal();
+            cirPbSignal.Value = signal + 100;
+            cirPbSignal.Text = signal.ToString();
+
+            int noise = myUbntClient.GetNoiseFloor();
+            cirPbNoise.Value = noise + 100;
+            cirPbNoise.Text = noise.ToString();
+
+            int ccq = myUbntClient.GetTransmitCCQ();
+            cirPbCCQ.Value = ccq;
+            cirPbCCQ.Text = ccq.ToString();
         }
 
         private void tsBtnRefresh_Click(object sender, EventArgs e)
@@ -74,6 +65,34 @@ namespace BulletClient
             lblTxRate.Text = myUbntClient.GetTxRate();
             lblRxRate.Text = myUbntClient.GetRxRate();
             lblUptime.Text = myUbntClient.GetUptimeFormatted();
+        }
+
+        private void tsBtnConnect_Click(object sender, EventArgs e)
+        {
+            if (mySshClient.Open(txtHost.Text, Convert.ToInt32(txtPort.Text), txtLogin.Text, txtPassword.Text))
+            {
+                myUbntClient.SetSSHClient(mySshClient);
+                txtLog.Text += "Connected..." + Environment.NewLine;
+                GetStatus();
+                timMain.Interval = 1500;
+                timMain.Start();
+            }
+        }
+
+        private void tsBtnDisconnect_Click(object sender, EventArgs e)
+        {
+            timMain.Stop();
+            mySshClient.Close();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            cirPbSignal.Value = 0;
+            cirPbSignal.Text = "0";
+            cirPbNoise.Value = 0;
+            cirPbNoise.Text = "0";
+            cirPbCCQ.Value = 0;
+            cirPbCCQ.Text = "0";
         }
     }
 }

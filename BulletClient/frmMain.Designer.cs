@@ -29,16 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.txtCommand = new System.Windows.Forms.TextBox();
             this.btnCommand = new System.Windows.Forms.Button();
             this.txtLog = new System.Windows.Forms.TextBox();
-            this.btnConnect = new System.Windows.Forms.Button();
-            this.btnDisconnect = new System.Windows.Forms.Button();
             this.txtHost = new System.Windows.Forms.TextBox();
             this.txtPort = new System.Windows.Forms.TextBox();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.lblSignal = new System.Windows.Forms.Label();
             this.timMain = new System.Windows.Forms.Timer(this.components);
             this.txtInterval = new System.Windows.Forms.TextBox();
             this.grbStatus = new System.Windows.Forms.GroupBox();
@@ -55,15 +53,16 @@
             this.tsBtnConnect = new System.Windows.Forms.ToolStripButton();
             this.tsBtnDisconnect = new System.Windows.Forms.ToolStripButton();
             this.tsBtnRefresh = new System.Windows.Forms.ToolStripButton();
-            this.lblNoiseFloor = new System.Windows.Forms.Label();
-            this.lblTransmitCCQ = new System.Windows.Forms.Label();
+            this.cirPbSignal = new CircularProgressBar.CircularProgressBar();
+            this.cirPbNoise = new CircularProgressBar.CircularProgressBar();
+            this.cirPbCCQ = new CircularProgressBar.CircularProgressBar();
             this.grbStatus.SuspendLayout();
             this.toolStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtCommand
             // 
-            this.txtCommand.Location = new System.Drawing.Point(12, 293);
+            this.txtCommand.Location = new System.Drawing.Point(12, 336);
             this.txtCommand.Name = "txtCommand";
             this.txtCommand.Size = new System.Drawing.Size(418, 20);
             this.txtCommand.TabIndex = 0;
@@ -71,7 +70,7 @@
             // 
             // btnCommand
             // 
-            this.btnCommand.Location = new System.Drawing.Point(436, 292);
+            this.btnCommand.Location = new System.Drawing.Point(436, 335);
             this.btnCommand.Name = "btnCommand";
             this.btnCommand.Size = new System.Drawing.Size(154, 23);
             this.btnCommand.TabIndex = 1;
@@ -88,29 +87,9 @@
             this.txtLog.Size = new System.Drawing.Size(578, 61);
             this.txtLog.TabIndex = 2;
             // 
-            // btnConnect
-            // 
-            this.btnConnect.Location = new System.Drawing.Point(436, 266);
-            this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(75, 23);
-            this.btnConnect.TabIndex = 3;
-            this.btnConnect.Text = "Connect";
-            this.btnConnect.UseVisualStyleBackColor = true;
-            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
-            // 
-            // btnDisconnect
-            // 
-            this.btnDisconnect.Location = new System.Drawing.Point(517, 266);
-            this.btnDisconnect.Name = "btnDisconnect";
-            this.btnDisconnect.Size = new System.Drawing.Size(73, 23);
-            this.btnDisconnect.TabIndex = 4;
-            this.btnDisconnect.Text = "Disconnect";
-            this.btnDisconnect.UseVisualStyleBackColor = true;
-            this.btnDisconnect.Click += new System.EventHandler(this.btnDisconnect_Click);
-            // 
             // txtHost
             // 
-            this.txtHost.Location = new System.Drawing.Point(12, 267);
+            this.txtHost.Location = new System.Drawing.Point(12, 310);
             this.txtHost.Name = "txtHost";
             this.txtHost.Size = new System.Drawing.Size(139, 20);
             this.txtHost.TabIndex = 5;
@@ -118,7 +97,7 @@
             // 
             // txtPort
             // 
-            this.txtPort.Location = new System.Drawing.Point(157, 267);
+            this.txtPort.Location = new System.Drawing.Point(157, 310);
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(51, 20);
             this.txtPort.TabIndex = 6;
@@ -126,7 +105,7 @@
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(214, 267);
+            this.txtLogin.Location = new System.Drawing.Point(214, 310);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(84, 20);
             this.txtLogin.TabIndex = 7;
@@ -134,23 +113,12 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(304, 267);
+            this.txtPassword.Location = new System.Drawing.Point(304, 310);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(71, 20);
             this.txtPassword.TabIndex = 8;
             this.txtPassword.Text = "***REMOVED***";
-            // 
-            // lblSignal
-            // 
-            this.lblSignal.AutoSize = true;
-            this.lblSignal.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblSignal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblSignal.Location = new System.Drawing.Point(74, 174);
-            this.lblSignal.Name = "lblSignal";
-            this.lblSignal.Size = new System.Drawing.Size(43, 46);
-            this.lblSignal.TabIndex = 9;
-            this.lblSignal.Text = "0";
             // 
             // timMain
             // 
@@ -158,7 +126,7 @@
             // 
             // txtInterval
             // 
-            this.txtInterval.Location = new System.Drawing.Point(381, 267);
+            this.txtInterval.Location = new System.Drawing.Point(381, 310);
             this.txtInterval.Name = "txtInterval";
             this.txtInterval.Size = new System.Drawing.Size(49, 20);
             this.txtInterval.TabIndex = 10;
@@ -175,9 +143,9 @@
             this.grbStatus.Controls.Add(this.lblUptime);
             this.grbStatus.Controls.Add(this.lblBaseSSID);
             this.grbStatus.Controls.Add(this.lblApMac);
-            this.grbStatus.Location = new System.Drawing.Point(12, 37);
+            this.grbStatus.Location = new System.Drawing.Point(12, 28);
             this.grbStatus.Name = "grbStatus";
-            this.grbStatus.Size = new System.Drawing.Size(415, 65);
+            this.grbStatus.Size = new System.Drawing.Size(510, 65);
             this.grbStatus.TabIndex = 11;
             this.grbStatus.TabStop = false;
             this.grbStatus.Text = "Status";
@@ -273,7 +241,7 @@
             this.toolStripMain.Location = new System.Drawing.Point(0, 0);
             this.toolStripMain.Name = "toolStripMain";
             this.toolStripMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStripMain.Size = new System.Drawing.Size(696, 25);
+            this.toolStripMain.Size = new System.Drawing.Size(723, 25);
             this.toolStripMain.TabIndex = 12;
             this.toolStripMain.Text = "toolStripMain";
             // 
@@ -283,6 +251,7 @@
             this.tsBtnConnect.Name = "tsBtnConnect";
             this.tsBtnConnect.Size = new System.Drawing.Size(56, 22);
             this.tsBtnConnect.Text = "Connect";
+            this.tsBtnConnect.Click += new System.EventHandler(this.tsBtnConnect_Click);
             // 
             // tsBtnDisconnect
             // 
@@ -290,6 +259,7 @@
             this.tsBtnDisconnect.Name = "tsBtnDisconnect";
             this.tsBtnDisconnect.Size = new System.Drawing.Size(70, 22);
             this.tsBtnDisconnect.Text = "Disconnect";
+            this.tsBtnDisconnect.Click += new System.EventHandler(this.tsBtnDisconnect_Click);
             // 
             // tsBtnRefresh
             // 
@@ -299,45 +269,120 @@
             this.tsBtnRefresh.Text = "Refresh";
             this.tsBtnRefresh.Click += new System.EventHandler(this.tsBtnRefresh_Click);
             // 
-            // lblNoiseFloor
+            // cirPbSignal
             // 
-            this.lblNoiseFloor.AutoSize = true;
-            this.lblNoiseFloor.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblNoiseFloor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblNoiseFloor.Location = new System.Drawing.Point(155, 174);
-            this.lblNoiseFloor.Name = "lblNoiseFloor";
-            this.lblNoiseFloor.Size = new System.Drawing.Size(43, 46);
-            this.lblNoiseFloor.TabIndex = 13;
-            this.lblNoiseFloor.Text = "0";
+            this.cirPbSignal.AnimationFunction = ((WinFormAnimation.AnimationFunctions.Function)(resources.GetObject("cirPbSignal.AnimationFunction")));
+            this.cirPbSignal.AnimationSpeed = 500;
+            this.cirPbSignal.BackColor = System.Drawing.Color.Transparent;
+            this.cirPbSignal.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold);
+            this.cirPbSignal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cirPbSignal.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.cirPbSignal.InnerMargin = 2;
+            this.cirPbSignal.InnerWidth = -1;
+            this.cirPbSignal.Location = new System.Drawing.Point(12, 105);
+            this.cirPbSignal.Margin = new System.Windows.Forms.Padding(0);
+            this.cirPbSignal.MarqueeAnimationSpeed = 2000;
+            this.cirPbSignal.Name = "cirPbSignal";
+            this.cirPbSignal.OuterColor = System.Drawing.Color.Gray;
+            this.cirPbSignal.OuterMargin = -25;
+            this.cirPbSignal.OuterWidth = 20;
+            this.cirPbSignal.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.cirPbSignal.ProgressWidth = 25;
+            this.cirPbSignal.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.cirPbSignal.Size = new System.Drawing.Size(170, 170);
+            this.cirPbSignal.StartAngle = 90;
+            this.cirPbSignal.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.cirPbSignal.SubscriptMargin = new System.Windows.Forms.Padding(-30, 0, 0, 0);
+            this.cirPbSignal.SubscriptText = "dBm";
+            this.cirPbSignal.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.cirPbSignal.SuperscriptMargin = new System.Windows.Forms.Padding(0);
+            this.cirPbSignal.SuperscriptText = "";
+            this.cirPbSignal.TabIndex = 15;
+            this.cirPbSignal.Text = "-70";
+            this.cirPbSignal.TextMargin = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.cirPbSignal.Value = 70;
             // 
-            // lblTransmitCCQ
+            // cirPbNoise
             // 
-            this.lblTransmitCCQ.AutoSize = true;
-            this.lblTransmitCCQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblTransmitCCQ.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblTransmitCCQ.Location = new System.Drawing.Point(236, 174);
-            this.lblTransmitCCQ.Name = "lblTransmitCCQ";
-            this.lblTransmitCCQ.Size = new System.Drawing.Size(43, 46);
-            this.lblTransmitCCQ.TabIndex = 14;
-            this.lblTransmitCCQ.Text = "0";
+            this.cirPbNoise.AnimationFunction = ((WinFormAnimation.AnimationFunctions.Function)(resources.GetObject("cirPbNoise.AnimationFunction")));
+            this.cirPbNoise.AnimationSpeed = 500;
+            this.cirPbNoise.BackColor = System.Drawing.Color.Transparent;
+            this.cirPbNoise.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold);
+            this.cirPbNoise.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cirPbNoise.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.cirPbNoise.InnerMargin = 2;
+            this.cirPbNoise.InnerWidth = -1;
+            this.cirPbNoise.Location = new System.Drawing.Point(182, 105);
+            this.cirPbNoise.Margin = new System.Windows.Forms.Padding(0);
+            this.cirPbNoise.MarqueeAnimationSpeed = 2000;
+            this.cirPbNoise.Name = "cirPbNoise";
+            this.cirPbNoise.OuterColor = System.Drawing.Color.Gray;
+            this.cirPbNoise.OuterMargin = -25;
+            this.cirPbNoise.OuterWidth = 20;
+            this.cirPbNoise.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.cirPbNoise.ProgressWidth = 25;
+            this.cirPbNoise.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.cirPbNoise.Size = new System.Drawing.Size(170, 170);
+            this.cirPbNoise.StartAngle = 90;
+            this.cirPbNoise.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.cirPbNoise.SubscriptMargin = new System.Windows.Forms.Padding(-30, 0, 0, 0);
+            this.cirPbNoise.SubscriptText = "dBm";
+            this.cirPbNoise.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.cirPbNoise.SuperscriptMargin = new System.Windows.Forms.Padding(0);
+            this.cirPbNoise.SuperscriptText = "";
+            this.cirPbNoise.TabIndex = 16;
+            this.cirPbNoise.Text = "-70";
+            this.cirPbNoise.TextMargin = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.cirPbNoise.Value = 70;
+            // 
+            // cirPbCCQ
+            // 
+            this.cirPbCCQ.AnimationFunction = ((WinFormAnimation.AnimationFunctions.Function)(resources.GetObject("cirPbCCQ.AnimationFunction")));
+            this.cirPbCCQ.AnimationSpeed = 500;
+            this.cirPbCCQ.BackColor = System.Drawing.Color.Transparent;
+            this.cirPbCCQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold);
+            this.cirPbCCQ.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cirPbCCQ.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.cirPbCCQ.InnerMargin = 2;
+            this.cirPbCCQ.InnerWidth = -1;
+            this.cirPbCCQ.Location = new System.Drawing.Point(352, 105);
+            this.cirPbCCQ.Margin = new System.Windows.Forms.Padding(0);
+            this.cirPbCCQ.MarqueeAnimationSpeed = 2000;
+            this.cirPbCCQ.Name = "cirPbCCQ";
+            this.cirPbCCQ.OuterColor = System.Drawing.Color.Gray;
+            this.cirPbCCQ.OuterMargin = -25;
+            this.cirPbCCQ.OuterWidth = 20;
+            this.cirPbCCQ.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(220)))), ((int)(((byte)(57)))));
+            this.cirPbCCQ.ProgressWidth = 25;
+            this.cirPbCCQ.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.cirPbCCQ.Size = new System.Drawing.Size(170, 170);
+            this.cirPbCCQ.StartAngle = 90;
+            this.cirPbCCQ.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.cirPbCCQ.SubscriptMargin = new System.Windows.Forms.Padding(-34, 0, 0, 0);
+            this.cirPbCCQ.SubscriptText = "%";
+            this.cirPbCCQ.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.cirPbCCQ.SuperscriptMargin = new System.Windows.Forms.Padding(0);
+            this.cirPbCCQ.SuperscriptText = "";
+            this.cirPbCCQ.TabIndex = 17;
+            this.cirPbCCQ.Text = "99";
+            this.cirPbCCQ.TextMargin = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.cirPbCCQ.Value = 70;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 441);
-            this.Controls.Add(this.lblTransmitCCQ);
-            this.Controls.Add(this.lblNoiseFloor);
+            this.ClientSize = new System.Drawing.Size(723, 449);
+            this.Controls.Add(this.cirPbCCQ);
+            this.Controls.Add(this.cirPbNoise);
+            this.Controls.Add(this.cirPbSignal);
             this.Controls.Add(this.toolStripMain);
             this.Controls.Add(this.grbStatus);
             this.Controls.Add(this.txtInterval);
-            this.Controls.Add(this.lblSignal);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.txtPort);
             this.Controls.Add(this.txtHost);
-            this.Controls.Add(this.btnDisconnect);
-            this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.txtLog);
             this.Controls.Add(this.btnCommand);
             this.Controls.Add(this.txtCommand);
@@ -346,6 +391,7 @@
             this.Name = "frmMain";
             this.Text = "Ubnt SSH Client";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.grbStatus.ResumeLayout(false);
             this.grbStatus.PerformLayout();
             this.toolStripMain.ResumeLayout(false);
@@ -360,13 +406,10 @@
         private System.Windows.Forms.TextBox txtCommand;
         private System.Windows.Forms.Button btnCommand;
         private System.Windows.Forms.TextBox txtLog;
-        private System.Windows.Forms.Button btnConnect;
-        private System.Windows.Forms.Button btnDisconnect;
         private System.Windows.Forms.TextBox txtHost;
         private System.Windows.Forms.TextBox txtPort;
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Label lblSignal;
         private System.Windows.Forms.Timer timMain;
         private System.Windows.Forms.TextBox txtInterval;
         private System.Windows.Forms.GroupBox grbStatus;
@@ -381,10 +424,11 @@
         private System.Windows.Forms.Label lblWlanIPAddress;
         private System.Windows.Forms.Label lblRxRate;
         private System.Windows.Forms.Label lblTxRate;
-        private System.Windows.Forms.Label lblNoiseFloor;
-        private System.Windows.Forms.Label lblTransmitCCQ;
         private System.Windows.Forms.ToolStripButton tsBtnConnect;
         private System.Windows.Forms.ToolStripButton tsBtnDisconnect;
+        private CircularProgressBar.CircularProgressBar cirPbSignal;
+        private CircularProgressBar.CircularProgressBar cirPbNoise;
+        private CircularProgressBar.CircularProgressBar cirPbCCQ;
     }
 }
 
