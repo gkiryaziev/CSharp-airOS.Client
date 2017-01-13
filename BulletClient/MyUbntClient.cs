@@ -17,7 +17,6 @@ namespace BulletClient
         {
             _client = client;
         }
-
         //---------------------------
         // Get Signal Strength
         //---------------------------
@@ -36,11 +35,35 @@ namespace BulletClient
         //---------------------------
         // Get Noise Floor
         //---------------------------
-
+        public int GetNoiseFloor()
+        {
+            if (_client != null)
+            {
+                string result = _client.Command("mca-status | grep noise");
+                if (result != "")
+                {
+                    return Convert.ToInt32(result.TrimEnd('\r', '\n').Split('=')[1]);
+                }
+                return -100;
+            }
+            return -100;
+        }
         //---------------------------
         // Get Transmit CCQ
         //---------------------------
-
+        public int GetTransmitCCQ()
+        {
+            if (_client != null)
+            {
+                string result = _client.Command("mca-status | grep ccq");
+                if (result != "")
+                {
+                    return Convert.ToInt32(result.TrimEnd('\r', '\n').Split('=')[1]) / 10;
+                }
+                return 0;
+            }
+            return 0;
+        }
         //---------------------------
         // Get Base Station SSID
         //---------------------------
@@ -108,7 +131,12 @@ namespace BulletClient
         //---------------------------
         // Get Channel
         //---------------------------
-
+        public string GetChannel()
+        {
+            string[] channels = { "2412", "2417", "2422", "2427", "2432", "2437", "2442",
+                                  "2447", "2452", "2457", "2462", "2467", "2472", "2484"};
+            return (Array.IndexOf(channels, GetFrequency()) + 1).ToString();
+        }
         //---------------------------
         // Get ACK Timeout
         //---------------------------
@@ -135,7 +163,7 @@ namespace BulletClient
                 string result = _client.Command("mca-status | grep wlanTxRate");
                 if (result != "")
                 {
-                    return result.TrimEnd('\r', '\n').Split('=')[1];
+                    return (result.TrimEnd('\r', '\n').Split('=')[1]).Split('.')[0];
                 }
                 return "";
             }
@@ -151,7 +179,7 @@ namespace BulletClient
                 string result = _client.Command("mca-status | grep wlanRxRate");
                 if (result != "")
                 {
-                    return result.TrimEnd('\r', '\n').Split('=')[1];
+                    return (result.TrimEnd('\r', '\n').Split('=')[1]).Split('.')[0];
                 }
                 return "";
             }
@@ -172,6 +200,21 @@ namespace BulletClient
                 return "";
             }
             return "";
+        }
+        //---------------------------
+        // Get Formatted Uptime
+        //---------------------------
+        public string GetUptimeFormatted()
+        {
+            TimeSpan ts = TimeSpan.FromSeconds(Convert.ToDouble(GetUptime()));
+            if (ts.Days > 0)
+            {
+                return ts.ToString(@"d' day(-s) 'hh\:mm\:ss");
+            }
+            else
+            {
+                return ts.ToString(@"hh\:mm\:ss");
+            }
         }
     }
 }

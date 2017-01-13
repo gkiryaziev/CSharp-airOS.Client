@@ -54,6 +54,8 @@ namespace BulletClient
         private void timMain_Tick(object sender, EventArgs e)
         {
             lblSignal.Text = myUbntClient.GetSignal().ToString();
+            lblNoiseFloor.Text = myUbntClient.GetNoiseFloor().ToString();
+            lblTransmitCCQ.Text = myUbntClient.GetTransmitCCQ().ToString();
         }
 
         private void tsBtnRefresh_Click(object sender, EventArgs e)
@@ -67,11 +69,11 @@ namespace BulletClient
             lblApMac.Text = myUbntClient.GetApMAC();
             lblWlanIPAddress.Text = myUbntClient.GetWlanIpAddress();
             lblFrequency.Text = myUbntClient.GetFrequency();
-            lblChannel.Text = "11";
+            lblChannel.Text = myUbntClient.GetChannel();
             lblACKTimeout.Text = myUbntClient.GetAckTimeout();
             lblTxRate.Text = myUbntClient.GetTxRate();
             lblRxRate.Text = myUbntClient.GetRxRate();
-            lblUptime.Text = myUbntClient.GetUptime();
+            lblUptime.Text = myUbntClient.GetUptimeFormatted();
         }
     }
 }

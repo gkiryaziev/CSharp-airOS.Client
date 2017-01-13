@@ -54,6 +54,10 @@
             this.lblTxRate = new System.Windows.Forms.Label();
             this.lblRxRate = new System.Windows.Forms.Label();
             this.lblWlanIPAddress = new System.Windows.Forms.Label();
+            this.lblNoiseFloor = new System.Windows.Forms.Label();
+            this.lblTransmitCCQ = new System.Windows.Forms.Label();
+            this.tsBtnConnect = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnDisconnect = new System.Windows.Forms.ToolStripButton();
             this.grbStatus.SuspendLayout();
             this.toolStripMain.SuspendLayout();
             this.SuspendLayout();
@@ -191,7 +195,9 @@
             // toolStripMain
             // 
             this.toolStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsBtnRefresh});
+            this.tsBtnRefresh,
+            this.tsBtnConnect,
+            this.tsBtnDisconnect});
             this.toolStripMain.Location = new System.Drawing.Point(0, 0);
             this.toolStripMain.Name = "toolStripMain";
             this.toolStripMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -281,11 +287,53 @@
             this.lblWlanIPAddress.TabIndex = 8;
             this.lblWlanIPAddress.Text = "lblWlanIPAddress";
             // 
+            // lblNoiseFloor
+            // 
+            this.lblNoiseFloor.AutoSize = true;
+            this.lblNoiseFloor.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblNoiseFloor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblNoiseFloor.Location = new System.Drawing.Point(110, 103);
+            this.lblNoiseFloor.Name = "lblNoiseFloor";
+            this.lblNoiseFloor.Size = new System.Drawing.Size(43, 46);
+            this.lblNoiseFloor.TabIndex = 13;
+            this.lblNoiseFloor.Text = "0";
+            // 
+            // lblTransmitCCQ
+            // 
+            this.lblTransmitCCQ.AutoSize = true;
+            this.lblTransmitCCQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblTransmitCCQ.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblTransmitCCQ.Location = new System.Drawing.Point(191, 103);
+            this.lblTransmitCCQ.Name = "lblTransmitCCQ";
+            this.lblTransmitCCQ.Size = new System.Drawing.Size(43, 46);
+            this.lblTransmitCCQ.TabIndex = 14;
+            this.lblTransmitCCQ.Text = "0";
+            // 
+            // tsBtnConnect
+            // 
+            this.tsBtnConnect.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnConnect.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnConnect.Image")));
+            this.tsBtnConnect.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnConnect.Name = "tsBtnConnect";
+            this.tsBtnConnect.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnConnect.Text = "Connect";
+            // 
+            // tsBtnDisconnect
+            // 
+            this.tsBtnDisconnect.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnDisconnect.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnDisconnect.Image")));
+            this.tsBtnDisconnect.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnDisconnect.Name = "tsBtnDisconnect";
+            this.tsBtnDisconnect.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnDisconnect.Text = "Disconnect";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(696, 441);
+            this.Controls.Add(this.lblTransmitCCQ);
+            this.Controls.Add(this.lblNoiseFloor);
             this.Controls.Add(this.toolStripMain);
             this.Controls.Add(this.grbStatus);
             this.Controls.Add(this.txtInterval);
@@ -339,6 +387,10 @@
         private System.Windows.Forms.Label lblWlanIPAddress;
         private System.Windows.Forms.Label lblRxRate;
         private System.Windows.Forms.Label lblTxRate;
+        private System.Windows.Forms.Label lblNoiseFloor;
+        private System.Windows.Forms.Label lblTransmitCCQ;
+        private System.Windows.Forms.ToolStripButton tsBtnConnect;
+        private System.Windows.Forms.ToolStripButton tsBtnDisconnect;
     }
 }
 
