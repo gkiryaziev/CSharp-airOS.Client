@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulletClient", "BulletClient\BulletClient.csproj", "{119E7A0A-70E3-493E-8999-0184A4E73240}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigManager", "ConfigManager\ConfigManager.csproj", "{1EFC9C90-E46F-4307-A8EA-D2C5A04C1ADA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoManager", "CryptoManager\CryptoManager.csproj", "{5AF8B7D7-A15E-4B7F-AE8D-7821B455FAAA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{119E7A0A-70E3-493E-8999-0184A4E73240}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{119E7A0A-70E3-493E-8999-0184A4E73240}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{119E7A0A-70E3-493E-8999-0184A4E73240}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EFC9C90-E46F-4307-A8EA-D2C5A04C1ADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EFC9C90-E46F-4307-A8EA-D2C5A04C1ADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EFC9C90-E46F-4307-A8EA-D2C5A04C1ADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EFC9C90-E46F-4307-A8EA-D2C5A04C1ADA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AF8B7D7-A15E-4B7F-AE8D-7821B455FAAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AF8B7D7-A15E-4B7F-AE8D-7821B455FAAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AF8B7D7-A15E-4B7F-AE8D-7821B455FAAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AF8B7D7-A15E-4B7F-AE8D-7821B455FAAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

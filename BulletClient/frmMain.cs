@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+﻿using ConfigManager;
+using CryptoManager;
+using System;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BulletClient
@@ -14,6 +10,13 @@ namespace BulletClient
     {
         MySSHClient mySshClient = new MySSHClient();
         MyUbntClient myUbntClient = new MyUbntClient();
+
+        // config
+        BinaryConfig binaryConfig = new BinaryConfig("config.dat");
+        AesCrypto aesCrypto = new AesCrypto(
+            Encoding.UTF8.GetBytes("I82XAGa4VfektNos"),
+            Encoding.UTF8.GetBytes("d6p75VWsd80ISL0e")
+        );
 
         public frmMain()
         {
@@ -78,12 +81,15 @@ namespace BulletClient
 
         private void tsBtnConnect_Click(object sender, EventArgs e)
         {
-            if (mySshClient.Open(txtHost.Text, Convert.ToInt32(txtPort.Text), txtLogin.Text, txtPassword.Text))
+            ConfigModel config = (ConfigModel)binaryConfig.Read();
+
+            if (mySshClient.Open(config.Host, config.Port,
+                aesCrypto.Dectypt(config.Login), aesCrypto.Dectypt(config.Password)))
             {
                 myUbntClient.SetSSHClient(mySshClient);
                 txtLog.Text += "Connected..." + Environment.NewLine;
                 GetStatus();
-                timMain.Interval = Convert.ToInt32(txtInterval.Text);
+                timMain.Interval = config.Interval;
                 timMain.Start();
             }
         }
@@ -102,6 +108,12 @@ namespace BulletClient
             cirPbNoise.Text = "0";
             cirPbCCQ.Value = 0;
             cirPbCCQ.Text = "0";
-        }        
+        }
+
+        private void tsBtnConfig_Click(object sender, EventArgs e)
+        {
+            frmConfig c = new frmConfig();
+            c.Open(binaryConfig, aesCrypto);
+        }
     }
 }
