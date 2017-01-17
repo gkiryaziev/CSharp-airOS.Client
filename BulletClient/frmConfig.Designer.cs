@@ -48,7 +48,6 @@
             this.txtInterval.Name = "txtInterval";
             this.txtInterval.Size = new System.Drawing.Size(139, 20);
             this.txtInterval.TabIndex = 15;
-            this.txtInterval.Text = "1500";
             // 
             // txtPassword
             // 
@@ -57,7 +56,6 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(139, 20);
             this.txtPassword.TabIndex = 14;
-            this.txtPassword.Text = "***REMOVED***";
             // 
             // txtLogin
             // 
@@ -65,7 +63,6 @@
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(139, 20);
             this.txtLogin.TabIndex = 13;
-            this.txtLogin.Text = "***REMOVED***";
             // 
             // txtPort
             // 
@@ -73,7 +70,6 @@
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(139, 20);
             this.txtPort.TabIndex = 12;
-            this.txtPort.Text = "22";
             // 
             // txtHost
             // 
@@ -81,7 +77,6 @@
             this.txtHost.Name = "txtHost";
             this.txtHost.Size = new System.Drawing.Size(139, 20);
             this.txtHost.TabIndex = 11;
-            this.txtHost.Text = "***REMOVED***";
             // 
             // label1
             // 
