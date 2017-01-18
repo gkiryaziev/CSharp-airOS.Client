@@ -23,6 +23,16 @@ namespace BulletClient
             InitializeComponent();
         }
 
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            cirPbSignal.Value = 0;
+            cirPbSignal.Text = "0";
+            cirPbNoise.Value = 0;
+            cirPbNoise.Text = "0";
+            cirPbCCQ.Value = 0;
+            cirPbCCQ.Text = "0";
+        }
+
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             mySshClient.Close();
@@ -35,6 +45,38 @@ namespace BulletClient
             {
                 txtLog.Text += result + Environment.NewLine;
             }
+        }        
+
+        private void tsBtnRefresh_Click(object sender, EventArgs e)
+        {
+            GetStatus();
+        }
+
+        private void tsBtnConnect_Click(object sender, EventArgs e)
+        {
+            ConfigModel config = (ConfigModel)binaryConfig.Read();
+
+            if (mySshClient.Open(config.Host, config.Port,
+                aesCrypto.Dectypt(config.Login), aesCrypto.Dectypt(config.Password)))
+            {
+                myUbntClient.SetSSHClient(mySshClient);
+                txtLog.Text += "Connected..." + Environment.NewLine;
+                GetStatus();
+                timMain.Interval = config.Interval;
+                timMain.Start();
+            }
+        }
+
+        private void tsBtnDisconnect_Click(object sender, EventArgs e)
+        {
+            timMain.Stop();
+            mySshClient.Close();
+        }
+
+        private void tsBtnConfig_Click(object sender, EventArgs e)
+        {
+            frmConfig c = new frmConfig();
+            c.Open(binaryConfig, aesCrypto);
         }
 
         private void timMain_Tick(object sender, EventArgs e)
@@ -61,11 +103,6 @@ namespace BulletClient
             }
         }
 
-        private void tsBtnRefresh_Click(object sender, EventArgs e)
-        {
-            GetStatus();
-        }
-
         private void GetStatus()
         {
             lblBaseSSID.Text = myUbntClient.GetBaseSSID();
@@ -77,43 +114,6 @@ namespace BulletClient
             lblTxRate.Text = myUbntClient.GetTxRate() + " Mbps";
             lblRxRate.Text = myUbntClient.GetRxRate() + " Mbps";
             lblUptime.Text = myUbntClient.GetUptimeFormatted();
-        }
-
-        private void tsBtnConnect_Click(object sender, EventArgs e)
-        {
-            ConfigModel config = (ConfigModel)binaryConfig.Read();
-
-            if (mySshClient.Open(config.Host, config.Port,
-                aesCrypto.Dectypt(config.Login), aesCrypto.Dectypt(config.Password)))
-            {
-                myUbntClient.SetSSHClient(mySshClient);
-                txtLog.Text += "Connected..." + Environment.NewLine;
-                GetStatus();
-                timMain.Interval = config.Interval;
-                timMain.Start();
-            }
-        }
-
-        private void tsBtnDisconnect_Click(object sender, EventArgs e)
-        {
-            timMain.Stop();
-            mySshClient.Close();
-        }
-
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            cirPbSignal.Value = 0;
-            cirPbSignal.Text = "0";
-            cirPbNoise.Value = 0;
-            cirPbNoise.Text = "0";
-            cirPbCCQ.Value = 0;
-            cirPbCCQ.Text = "0";
-        }
-
-        private void tsBtnConfig_Click(object sender, EventArgs e)
-        {
-            frmConfig c = new frmConfig();
-            c.Open(binaryConfig, aesCrypto);
         }
     }
 }
