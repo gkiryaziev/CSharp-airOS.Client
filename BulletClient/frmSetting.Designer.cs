@@ -1,6 +1,6 @@
 ﻿namespace BulletClient
 {
-    partial class frmConfig
+    partial class frmSetting
     {
         /// <summary>
         /// Required designer variable.
@@ -38,8 +38,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnRead = new System.Windows.Forms.Button();
-            this.btnWrite = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtInterval
@@ -123,33 +123,33 @@
             this.label5.TabIndex = 20;
             this.label5.Text = "Password";
             // 
-            // btnRead
+            // btnLoad
             // 
-            this.btnRead.Location = new System.Drawing.Point(15, 142);
-            this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(100, 23);
-            this.btnRead.TabIndex = 21;
-            this.btnRead.Text = "Read";
-            this.btnRead.UseVisualStyleBackColor = true;
-            this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
+            this.btnLoad.Location = new System.Drawing.Point(15, 142);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(100, 23);
+            this.btnLoad.TabIndex = 21;
+            this.btnLoad.Text = "Load";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
-            // btnWrite
+            // btnSave
             // 
-            this.btnWrite.Location = new System.Drawing.Point(123, 142);
-            this.btnWrite.Name = "btnWrite";
-            this.btnWrite.Size = new System.Drawing.Size(100, 23);
-            this.btnWrite.TabIndex = 22;
-            this.btnWrite.Text = "Write";
-            this.btnWrite.UseVisualStyleBackColor = true;
-            this.btnWrite.Click += new System.EventHandler(this.btnWrite_Click);
+            this.btnSave.Location = new System.Drawing.Point(123, 142);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(100, 23);
+            this.btnSave.TabIndex = 22;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // frmConfig
+            // frmSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(236, 178);
-            this.Controls.Add(this.btnWrite);
-            this.Controls.Add(this.btnRead);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -163,9 +163,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmConfig";
+            this.Name = "frmSetting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Config";
+            this.Text = "Setting";
             this.Load += new System.EventHandler(this.frmConfig_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -184,7 +184,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnRead;
-        private System.Windows.Forms.Button btnWrite;
+        private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.Button btnSave;
     }
 }

@@ -31,6 +31,10 @@ namespace BulletClient
             cirPbNoise.Text = "0";
             cirPbCCQ.Value = 0;
             cirPbCCQ.Text = "0";
+            StatusOnDisconnect();
+
+            if (!binaryConfig.Exists())
+                CreateDefaultConfig();
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -38,12 +42,12 @@ namespace BulletClient
             mySshClient.Close();
         }
 
-        private void btnCommand_Click(object sender, EventArgs e)
+        private void btnCommandSend_Click(object sender, EventArgs e)
         {
-            String result = mySshClient.Command(txtCommand.Text);
+            string result = mySshClient.Command(txtCommand.Text);
             if (result != "")
             {
-                txtLog.Text += result + Environment.NewLine;
+                Log(result);
             }
         }        
 
@@ -60,10 +64,11 @@ namespace BulletClient
                 aesCrypto.Dectypt(config.Login), aesCrypto.Dectypt(config.Password)))
             {
                 myUbntClient.SetSSHClient(mySshClient);
-                txtLog.Text += "Connected..." + Environment.NewLine;
+                Log("Connected.");
                 GetStatus();
                 timMain.Interval = config.Interval;
                 timMain.Start();
+                StatusOnConnect();
             }
         }
 
@@ -71,12 +76,19 @@ namespace BulletClient
         {
             timMain.Stop();
             mySshClient.Close();
+            Log("Disconnected.");
+            StatusOnDisconnect();
         }
 
-        private void tsBtnConfig_Click(object sender, EventArgs e)
+        private void tsBtnSettingClick(object sender, EventArgs e)
         {
-            frmConfig c = new frmConfig();
+            frmSetting c = new frmSetting();
             c.Open(binaryConfig, aesCrypto);
+        }
+
+        private void tsBtnClearLog_Click(object sender, EventArgs e)
+        {
+            txtLog.Text = "";
         }
 
         private void timMain_Tick(object sender, EventArgs e)
@@ -103,6 +115,9 @@ namespace BulletClient
             }
         }
 
+        //---------------------------------
+        // Get main status
+        //---------------------------------
         private void GetStatus()
         {
             lblBaseSSID.Text = myUbntClient.GetBaseSSID();
@@ -114,6 +129,53 @@ namespace BulletClient
             lblTxRate.Text = myUbntClient.GetTxRate() + " Mbps";
             lblRxRate.Text = myUbntClient.GetRxRate() + " Mbps";
             lblUptime.Text = myUbntClient.GetUptimeFormatted();
+        }
+
+        //---------------------------------
+        // Log
+        //---------------------------------
+        private void Log(string message)
+        {
+            txtLog.Text += DateTime.Now.ToString("HH:mm:ss") + " > " + message.TrimEnd('\r', '\n') + Environment.NewLine;
+        }
+
+        //---------------------------------
+        // Control state on connect
+        //---------------------------------
+        private void StatusOnConnect()
+        {
+            tsBtnConnect.Enabled = false;
+            tsBtnDisconnect.Enabled = true;
+            tsBtnRefresh.Enabled = true;
+            tsBtnSetting.Enabled = false;
+            btnCommandSend.Enabled = true;
+        }
+
+        //---------------------------------
+        // Control state on disconnect
+        //---------------------------------
+        private void StatusOnDisconnect()
+        {
+            tsBtnConnect.Enabled = true;
+            tsBtnDisconnect.Enabled = false;
+            tsBtnRefresh.Enabled = false;
+            tsBtnSetting.Enabled = true;
+            btnCommandSend.Enabled = false;
+        }
+
+        //---------------------------------
+        // Check if config file exists
+        //---------------------------------
+        private void CreateDefaultConfig()
+        {
+            ConfigModel config = new ConfigModel();
+            config.Host = "192.168.1.1";
+            config.Port = 22;
+            config.Login = aesCrypto.Encrypt("admin");
+            config.Password = aesCrypto.Encrypt("admin");
+            config.Interval = 2000;
+            binaryConfig.Write(config);
+            Log("Created default config file.");
         }
     }
 }

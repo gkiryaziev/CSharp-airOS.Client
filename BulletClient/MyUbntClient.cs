@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BulletClient
 {
@@ -17,6 +13,7 @@ namespace BulletClient
         {
             _client = client;
         }
+
         //---------------------------
         // Get Signal Strength
         //---------------------------
@@ -32,6 +29,7 @@ namespace BulletClient
             }
             return -100;
         }
+        
         //---------------------------
         // Get Noise Floor
         //---------------------------
@@ -48,6 +46,7 @@ namespace BulletClient
             }
             return -100;
         }
+        
         //---------------------------
         // Get Transmit CCQ
         //---------------------------
@@ -64,6 +63,7 @@ namespace BulletClient
             }
             return 0;
         }
+        
         //---------------------------
         // Get Base Station SSID
         //---------------------------
@@ -80,6 +80,7 @@ namespace BulletClient
             }
             return "";
         }
+        
         //---------------------------
         // Get AP MAC
         //---------------------------
@@ -96,6 +97,7 @@ namespace BulletClient
             }
             return "";
         }
+        
         //---------------------------
         // Get WLAN IP Address
         //---------------------------
@@ -112,6 +114,7 @@ namespace BulletClient
             }
             return "";
         }
+        
         //---------------------------
         // Get Frequency
         //---------------------------
@@ -128,6 +131,7 @@ namespace BulletClient
             }
             return "";
         }
+        
         //---------------------------
         // Get Channel
         //---------------------------
@@ -137,6 +141,7 @@ namespace BulletClient
                                   "2447", "2452", "2457", "2462", "2467", "2472", "2484"};
             return (Array.IndexOf(channels, GetFrequency()) + 1).ToString();
         }
+        
         //---------------------------
         // Get ACK Timeout
         //---------------------------
@@ -153,6 +158,7 @@ namespace BulletClient
             }
             return "";
         }
+        
         //---------------------------
         // Get TX Rate
         //---------------------------
@@ -169,6 +175,7 @@ namespace BulletClient
             }
             return "";
         }
+        
         //---------------------------
         // Get RX Rate
         //---------------------------
@@ -185,6 +192,7 @@ namespace BulletClient
             }
             return "";
         }
+        
         //---------------------------
         // Get Uptime
         //---------------------------
@@ -201,6 +209,7 @@ namespace BulletClient
             }
             return "";
         }
+        
         //---------------------------
         // Get Formatted Uptime
         //---------------------------

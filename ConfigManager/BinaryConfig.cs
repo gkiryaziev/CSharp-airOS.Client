@@ -52,6 +52,31 @@ namespace ConfigManager
         }
 
         //---------------------------------
+        // File exists
+        //---------------------------------
+        public bool Exists()
+        {
+            return _exists();
+        }
+
+        //---------------------------------
+        // File exists
+        //---------------------------------
+        public bool Exists(string file)
+        {
+            _file = file;
+            return _exists();
+        }
+
+        //---------------------------------
+        // Read data from file Main
+        //---------------------------------
+        private bool _exists()
+        {
+            return File.Exists(_file);
+        }
+
+        //---------------------------------
         // Read data from file Main
         //---------------------------------
         private object _read()
