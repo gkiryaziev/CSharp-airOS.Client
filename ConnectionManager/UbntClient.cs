@@ -1,15 +1,15 @@
 ﻿using System;
 
-namespace BulletClient
+namespace ConnectionManager
 {
-    class MyUbntClient
+    public class UbntClient
     {
-        private MySSHClient _client = null;
+        private SSHClient _client = null;
 
         //---------------------------
         // Set SSH Client
         //---------------------------
-        public void SetSSHClient(MySSHClient client)
+        public void SetSSHClient(SSHClient client)
         {
             _client = client;
         }

@@ -1,8 +1,8 @@
 ﻿using Renci.SshNet;
 
-namespace BulletClient
+namespace ConnectionManager
 {
-    class MySSHClient
+    public class SSHClient
     {
         private SshClient client = null;
         private SshCommand cmd = null;

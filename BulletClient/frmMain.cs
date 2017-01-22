@@ -1,4 +1,5 @@
 ﻿using ConfigManager;
+using ConnectionManager;
 using CryptoManager;
 using System;
 using System.Text;
@@ -8,8 +9,9 @@ namespace BulletClient
 {
     public partial class frmMain : Form
     {
-        MySSHClient mySshClient = new MySSHClient();
-        MyUbntClient myUbntClient = new MyUbntClient();
+        // client
+        SSHClient sshClient = new SSHClient();
+        UbntClient ubntClient = new UbntClient();
 
         // config
         BinaryConfig binaryConfig = new BinaryConfig("config.dat");
@@ -39,12 +41,12 @@ namespace BulletClient
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            mySshClient.Close();
+            sshClient.Close();
         }
 
         private void btnCommandSend_Click(object sender, EventArgs e)
         {
-            string result = mySshClient.Command(txtCommand.Text);
+            string result = sshClient.Command(txtCommand.Text);
             if (result != "")
             {
                 Log(result);
@@ -60,10 +62,10 @@ namespace BulletClient
         {
             ConfigModel config = (ConfigModel)binaryConfig.Read();
 
-            if (mySshClient.Open(config.Host, config.Port,
+            if (sshClient.Open(config.Host, config.Port,
                 aesCrypto.Dectypt(config.Login), aesCrypto.Dectypt(config.Password)))
             {
-                myUbntClient.SetSSHClient(mySshClient);
+                ubntClient.SetSSHClient(sshClient);
                 Log("Connected.");
                 GetStatus();
                 timMain.Interval = config.Interval;
@@ -75,7 +77,7 @@ namespace BulletClient
         private void tsBtnDisconnect_Click(object sender, EventArgs e)
         {
             timMain.Stop();
-            mySshClient.Close();
+            sshClient.Close();
             Log("Disconnected.");
             StatusOnDisconnect();
         }
@@ -95,21 +97,21 @@ namespace BulletClient
         {
             if (chkBoxSignal.Checked)
             {
-                int signal = myUbntClient.GetSignal();
+                int signal = ubntClient.GetSignal();
                 cirPbSignal.Value = signal + 100;
                 cirPbSignal.Text = signal.ToString();
             }
 
             if (chkBoxNoise.Checked)
             {
-                int noise = myUbntClient.GetNoiseFloor();
+                int noise = ubntClient.GetNoiseFloor();
                 cirPbNoise.Value = noise + 100;
                 cirPbNoise.Text = noise.ToString();
             }
 
             if (chkBoxCCQ.Checked)
             {
-                int ccq = myUbntClient.GetTransmitCCQ();
+                int ccq = ubntClient.GetTransmitCCQ();
                 cirPbCCQ.Value = ccq;
                 cirPbCCQ.Text = ccq.ToString();
             }
@@ -120,15 +122,15 @@ namespace BulletClient
         //---------------------------------
         private void GetStatus()
         {
-            lblBaseSSID.Text = myUbntClient.GetBaseSSID();
-            lblApMac.Text = myUbntClient.GetApMAC();
-            lblWlanIPAddress.Text = myUbntClient.GetWlanIpAddress();
-            lblFrequency.Text = myUbntClient.GetFrequency() + " MHz";
-            lblChannel.Text = myUbntClient.GetChannel();
-            lblACKTimeout.Text = myUbntClient.GetAckTimeout();
-            lblTxRate.Text = myUbntClient.GetTxRate() + " Mbps";
-            lblRxRate.Text = myUbntClient.GetRxRate() + " Mbps";
-            lblUptime.Text = myUbntClient.GetUptimeFormatted();
+            lblBaseSSID.Text = ubntClient.GetBaseSSID();
+            lblApMac.Text = ubntClient.GetApMAC();
+            lblWlanIPAddress.Text = ubntClient.GetWlanIpAddress();
+            lblFrequency.Text = ubntClient.GetFrequency() + " MHz";
+            lblChannel.Text = ubntClient.GetChannel();
+            lblACKTimeout.Text = ubntClient.GetAckTimeout();
+            lblTxRate.Text = ubntClient.GetTxRate() + " Mbps";
+            lblRxRate.Text = ubntClient.GetRxRate() + " Mbps";
+            lblUptime.Text = ubntClient.GetUptimeFormatted();
         }
 
         //---------------------------------

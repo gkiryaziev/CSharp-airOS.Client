@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigManager", "ConfigMana
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoManager", "CryptoManager\CryptoManager.csproj", "{5AF8B7D7-A15E-4B7F-AE8D-7821B455FAAA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionManager", "ConnectionManager\ConnectionManager.csproj", "{358B25A5-B35E-4E0F-951C-B1A0CF8A2D10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{5AF8B7D7-A15E-4B7F-AE8D-7821B455FAAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AF8B7D7-A15E-4B7F-AE8D-7821B455FAAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AF8B7D7-A15E-4B7F-AE8D-7821B455FAAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{358B25A5-B35E-4E0F-951C-B1A0CF8A2D10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{358B25A5-B35E-4E0F-951C-B1A0CF8A2D10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{358B25A5-B35E-4E0F-951C-B1A0CF8A2D10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{358B25A5-B35E-4E0F-951C-B1A0CF8A2D10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
