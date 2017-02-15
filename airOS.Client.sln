@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulletClient", "BulletClient\BulletClient.csproj", "{119E7A0A-70E3-493E-8999-0184A4E73240}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "airOS.Client", "airOS.Client\airOS.Client.csproj", "{119E7A0A-70E3-493E-8999-0184A4E73240}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigManager", "ConfigManager\ConfigManager.csproj", "{1EFC9C90-E46F-4307-A8EA-D2C5A04C1ADA}"
 EndProject

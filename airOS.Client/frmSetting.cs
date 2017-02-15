@@ -3,7 +3,7 @@ using CryptoManager;
 using System;
 using System.Windows.Forms;
 
-namespace BulletClient
+namespace AirOSClient
 {
     public partial class frmSetting : Form
     {

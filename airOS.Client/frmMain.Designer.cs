@@ -1,4 +1,4 @@
-﻿namespace BulletClient
+﻿namespace AirOSClient
 {
     partial class frmMain
     {
@@ -334,6 +334,7 @@
             // 
             // toolStripMain
             // 
+            this.toolStripMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsBtnConnect,
             this.tsBtnDisconnect,
@@ -351,28 +352,28 @@
             // 
             // tsBtnConnect
             // 
-            this.tsBtnConnect.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnConnect.Image")));
+            this.tsBtnConnect.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsBtnConnect.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnConnect.Name = "tsBtnConnect";
-            this.tsBtnConnect.Size = new System.Drawing.Size(72, 22);
+            this.tsBtnConnect.Size = new System.Drawing.Size(62, 22);
             this.tsBtnConnect.Text = "Connect";
             this.tsBtnConnect.Click += new System.EventHandler(this.tsBtnConnect_Click);
             // 
             // tsBtnDisconnect
             // 
-            this.tsBtnDisconnect.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnDisconnect.Image")));
+            this.tsBtnDisconnect.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsBtnDisconnect.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnDisconnect.Name = "tsBtnDisconnect";
-            this.tsBtnDisconnect.Size = new System.Drawing.Size(86, 22);
+            this.tsBtnDisconnect.Size = new System.Drawing.Size(78, 22);
             this.tsBtnDisconnect.Text = "Disconnect";
             this.tsBtnDisconnect.Click += new System.EventHandler(this.tsBtnDisconnect_Click);
             // 
             // tsBtnRefresh
             // 
-            this.tsBtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnRefresh.Image")));
+            this.tsBtnRefresh.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsBtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnRefresh.Name = "tsBtnRefresh";
-            this.tsBtnRefresh.Size = new System.Drawing.Size(66, 22);
+            this.tsBtnRefresh.Size = new System.Drawing.Size(57, 22);
             this.tsBtnRefresh.Text = "Refresh";
             this.tsBtnRefresh.Click += new System.EventHandler(this.tsBtnRefresh_Click);
             // 
@@ -383,10 +384,10 @@
             // 
             // tsBtnSetting
             // 
-            this.tsBtnSetting.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnSetting.Image")));
+            this.tsBtnSetting.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsBtnSetting.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnSetting.Name = "tsBtnSetting";
-            this.tsBtnSetting.Size = new System.Drawing.Size(64, 22);
+            this.tsBtnSetting.Size = new System.Drawing.Size(55, 22);
             this.tsBtnSetting.Text = "Setting";
             this.tsBtnSetting.Click += new System.EventHandler(this.tsBtnSettingClick);
             // 
@@ -397,10 +398,10 @@
             // 
             // tsBtnClearLog
             // 
-            this.tsBtnClearLog.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnClearLog.Image")));
+            this.tsBtnClearLog.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsBtnClearLog.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnClearLog.Name = "tsBtnClearLog";
-            this.tsBtnClearLog.Size = new System.Drawing.Size(77, 22);
+            this.tsBtnClearLog.Size = new System.Drawing.Size(68, 22);
             this.tsBtnClearLog.Text = "Clear Log";
             this.tsBtnClearLog.Click += new System.EventHandler(this.tsBtnClearLog_Click);
             // 
@@ -614,7 +615,7 @@
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ubnt SSH Client";
+            this.Text = "airOS SSH Client";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.grBoxStatus.ResumeLayout(false);

@@ -5,7 +5,7 @@ using System;
 using System.Text;
 using System.Windows.Forms;
 
-namespace BulletClient
+namespace AirOSClient
 {
     public partial class frmMain : Form
     {

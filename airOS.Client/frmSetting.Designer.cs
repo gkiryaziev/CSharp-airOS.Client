@@ -1,4 +1,4 @@
-﻿namespace BulletClient
+﻿namespace AirOSClient
 {
     partial class frmSetting
     {
