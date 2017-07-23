@@ -1,4 +1,8 @@
 ﻿using Renci.SshNet;
+using System;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace ConnectionManager
 {
@@ -6,6 +10,8 @@ namespace ConnectionManager
     {
         private SshClient client = null;
         private SshCommand cmd = null;
+
+        private SemaphoreSlim semaphoreSlim = new SemaphoreSlim(1, 1);
 
         //---------------------------
         // Open connection
@@ -46,6 +52,23 @@ namespace ConnectionManager
                 return cmd.Execute(command);
             else
                 return "";
+        }
+
+        //---------------------------
+        // Command Async
+        //---------------------------
+        public async Task<string> CommandAsync(string command)
+        {
+            await semaphoreSlim.WaitAsync();
+
+            try
+            {
+                return await Task.Run(() => Command(command)).ConfigureAwait(false);
+            }
+            finally
+            {
+                semaphoreSlim.Release();
+            }
         }
     }
 }

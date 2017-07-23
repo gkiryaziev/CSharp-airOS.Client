@@ -51,7 +51,7 @@ namespace AirOSClient
             {
                 Log(result);
             }
-        }        
+        }
 
         private void tsBtnRefresh_Click(object sender, EventArgs e)
         {
@@ -93,25 +93,25 @@ namespace AirOSClient
             txtLog.Text = "";
         }
 
-        private void timMain_Tick(object sender, EventArgs e)
+        private async void timMain_Tick(object sender, EventArgs e)
         {
             if (chkBoxSignal.Checked)
             {
-                int signal = ubntClient.GetSignal();
+                int signal = await ubntClient.GetSignalAsync();
                 cirPbSignal.Value = signal + 100;
                 cirPbSignal.Text = signal.ToString();
             }
 
             if (chkBoxNoise.Checked)
             {
-                int noise = ubntClient.GetNoiseFloor();
+                int noise = await ubntClient.GetNoiseFloorAsync();
                 cirPbNoise.Value = noise + 100;
                 cirPbNoise.Text = noise.ToString();
             }
 
             if (chkBoxCCQ.Checked)
             {
-                int ccq = ubntClient.GetTransmitCCQ();
+                int ccq = await ubntClient.GetTransmitCCQAsync();
                 cirPbCCQ.Value = ccq;
                 cirPbCCQ.Text = ccq.ToString();
             }

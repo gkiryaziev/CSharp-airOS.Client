@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace ConnectionManager
 {
@@ -17,19 +18,37 @@ namespace ConnectionManager
         //---------------------------
         // Get Signal Strength
         //---------------------------
-        public int GetSignal() {
+        public int GetSignal()
+        {
             if (_client != null)
             {
                 string result = _client.Command("mca-status | grep signal");
                 if (result != "")
                 {
-                    return Convert.ToInt32(result.TrimEnd('\r', '\n').Split('=')[1]);
+                    return Convert.ToInt32(trimString(result));
                 }
                 return -100;
             }
             return -100;
         }
-        
+
+        //---------------------------
+        // Get Signal Strength Async
+        //---------------------------
+        public async Task<int> GetSignalAsync()
+        {
+            if (_client != null)
+            {
+                string result = await _client.CommandAsync("mca-status | grep signal");
+                if (result != "")
+                {
+                    return Convert.ToInt32(trimString(result));
+                }
+                return -100;
+            }
+            return -100;
+        }
+
         //---------------------------
         // Get Noise Floor
         //---------------------------
@@ -40,13 +59,30 @@ namespace ConnectionManager
                 string result = _client.Command("mca-status | grep noise");
                 if (result != "")
                 {
-                    return Convert.ToInt32(result.TrimEnd('\r', '\n').Split('=')[1]);
+                    return Convert.ToInt32(trimString(result));
                 }
                 return -100;
             }
             return -100;
         }
-        
+
+        //---------------------------
+        // Get Noise Floor Async
+        //---------------------------
+        public async Task<int> GetNoiseFloorAsync()
+        {
+            if (_client != null)
+            {
+                string result = await _client.CommandAsync("mca-status | grep noise");
+                if (result != "")
+                {
+                    return Convert.ToInt32(trimString(result));
+                }
+                return -100;
+            }
+            return -100;
+        }
+
         //---------------------------
         // Get Transmit CCQ
         //---------------------------
@@ -57,13 +93,30 @@ namespace ConnectionManager
                 string result = _client.Command("mca-status | grep ccq");
                 if (result != "")
                 {
-                    return Convert.ToInt32(result.TrimEnd('\r', '\n').Split('=')[1]) / 10;
+                    return Convert.ToInt32(trimString(result)) / 10;
                 }
                 return 0;
             }
             return 0;
         }
-        
+
+        //---------------------------
+        // Get Transmit CCQ Async
+        //---------------------------
+        public async Task<int> GetTransmitCCQAsync()
+        {
+            if (_client != null)
+            {
+                string result = await _client.CommandAsync("mca-status | grep ccq");
+                if (result != "")
+                {
+                    return Convert.ToInt32(trimString(result)) / 10;
+                }
+                return 0;
+            }
+            return 0;
+        }
+
         //---------------------------
         // Get Base Station SSID
         //---------------------------
@@ -80,7 +133,7 @@ namespace ConnectionManager
             }
             return "";
         }
-        
+
         //---------------------------
         // Get AP MAC
         //---------------------------
@@ -97,7 +150,7 @@ namespace ConnectionManager
             }
             return "";
         }
-        
+
         //---------------------------
         // Get WLAN IP Address
         //---------------------------
@@ -114,7 +167,7 @@ namespace ConnectionManager
             }
             return "";
         }
-        
+
         //---------------------------
         // Get Frequency
         //---------------------------
@@ -131,7 +184,7 @@ namespace ConnectionManager
             }
             return "";
         }
-        
+
         //---------------------------
         // Get Channel
         //---------------------------
@@ -141,7 +194,7 @@ namespace ConnectionManager
                                   "2447", "2452", "2457", "2462", "2467", "2472", "2484"};
             return (Array.IndexOf(channels, GetFrequency()) + 1).ToString();
         }
-        
+
         //---------------------------
         // Get ACK Timeout
         //---------------------------
@@ -158,7 +211,7 @@ namespace ConnectionManager
             }
             return "";
         }
-        
+
         //---------------------------
         // Get TX Rate
         //---------------------------
@@ -175,7 +228,7 @@ namespace ConnectionManager
             }
             return "";
         }
-        
+
         //---------------------------
         // Get RX Rate
         //---------------------------
@@ -192,7 +245,7 @@ namespace ConnectionManager
             }
             return "";
         }
-        
+
         //---------------------------
         // Get Uptime
         //---------------------------
@@ -209,7 +262,7 @@ namespace ConnectionManager
             }
             return "";
         }
-        
+
         //---------------------------
         // Get Formatted Uptime
         //---------------------------
@@ -228,6 +281,14 @@ namespace ConnectionManager
                 }
             }
             return "";
+        }
+
+        //---------------------------
+        // Trim strimg
+        //---------------------------
+        private string trimString(string str)
+        {
+            return str.TrimEnd('\r', '\n').Split('=')[1];
         }
     }
 }
